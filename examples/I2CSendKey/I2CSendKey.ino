@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <EEPROM.h>
 
-  String key="fonzie42";
+char key[9]="fonzie42";
 
 
 void setup() {
@@ -18,7 +18,6 @@ void loop() {
 
 }
 void requestEvent() {
-  Wire.write("fonzie42"); // respond with message of 6 bytes
-  // as expected by master
+  Wire.write(key);
 }
 

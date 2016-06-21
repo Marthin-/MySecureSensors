@@ -1,0 +1,1 @@
+Use this sketch to read first 128 bits of EEPROM (previously stored with I2CReceiveKey)
