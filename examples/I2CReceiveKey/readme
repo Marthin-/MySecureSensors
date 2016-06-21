@@ -1,0 +1,5 @@
+************************
+*     I2CReceiveKey    *
+************************
+
+this sketch receives a key from sender using I2C protocol on Arduino
