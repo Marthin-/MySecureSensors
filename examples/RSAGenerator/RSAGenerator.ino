@@ -7,10 +7,11 @@ struct RSAKey{
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  Serial.println("Compute RSA keys using pre-computed prime numbers");
+  randomSeed(analogRead(0));
+  Serial.println("Compute RSA keys using prime numbers");
   unsigned int p,q; //(unsigned int : from 0 to 65,535)
-  p=1999;
-  q=2837;
+  p=generatePrime();
+  q=generatePrime();
   Serial.print("Using p=");
   Serial.print(p);
   Serial.print(" ; q=");
@@ -50,6 +51,24 @@ void setup() {
 void loop() {
   // put your main code where your mouth is
 
+}
+
+unsigned int generatePrime(){  
+  unsigned int a;
+  a=random(2837,65533);
+  while(isPrime(a)==false){
+    a=random(2837,65533);
+  }
+  return a;
+}
+
+boolean isPrime(unsigned int a){
+  for(int i=3;i<a;i++){
+    if(a%i==0){
+      return false;
+    }
+  }
+  return true;
 }
 
 unsigned long gcd(unsigned long a, unsigned long b){
