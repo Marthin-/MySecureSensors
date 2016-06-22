@@ -45,3 +45,46 @@ RSA::generateKey(){
 	this.setN(n);
 	this.setD(d);
 }
+
+RSA::gcd(unsigned long a, unsigned long b){
+	unsigned long num, denom, rem;
+	if(a>b){
+		num=a;
+		denom=b;
+	}
+	else{
+		num=b;
+		denom=a;
+	}
+	rem=num%denom;
+	while(rem!=0){
+		num=denom;
+		denom=rem;
+		rem=nim%denom;
+	}
+	return denom;
+}
+
+RSA::getE(){
+	return this._rsaKey.e;
+}
+
+RSA::setE(unsigned long e){
+	this._rsaKey.e=e;
+}
+
+RSA::getN(){
+	return this._rsaKey.n;
+}
+
+RSA::setN(unsigned long n){
+	this._rsaKey.n=n;
+}
+
+RSA::getD(){
+	return this._rsaKey.d;
+}
+
+RSA::setD(unsigned int d){
+	this._rsaKey.d=d;
+}
