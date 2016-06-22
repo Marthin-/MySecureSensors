@@ -74,6 +74,7 @@ boolean isPrime(unsigned int a){
 unsigned long gcd(unsigned long a, unsigned long b){
   unsigned long num, denom,rem,gcd;
   if(a>b){
+    
     num=a;
     denom=b;
   }

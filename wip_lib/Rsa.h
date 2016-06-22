@@ -1,5 +1,7 @@
-#ifndef RSA_h
-#define RSA_h
+#ifndef Rsa_h
+#define Rsa_h
+
+#include <Arduino.h>
 
 struct RSAKey{
 	unsigned long e;
@@ -7,12 +9,12 @@ struct RSAKey{
 	unsigned long d;
 };
 
-class RSA {
+class Rsa {
 	public:
-	RSA RSA();
-	long int generatePrime();
-	boolean isPrime(long int a);
-	void generateKey(RSAKey key);
+	Rsa();
+	unsigned int generatePrime();
+	boolean isPrime(unsigned int a);
+	void generateKey();
 	unsigned long gcd(unsigned long a, unsigned long b);
 	unsigned long getE();
 	void setE(unsigned long e);
@@ -22,5 +24,5 @@ class RSA {
 	void setD(unsigned long d);
 	private:
 	RSAKey _rsaKey;
-}
+};
 #endif

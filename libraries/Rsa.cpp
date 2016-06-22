@@ -1,8 +1,8 @@
-RSA::RSA(){
+Rsa::Rsa(){
 	randomSeed(analogRead(0));	
 }
 
-RSA::generatePrime(){
+Rsa::generatePrime(){
 	unsigned int a;
 	a=random(2837,65533);	//prevent too small prime numbers
 	while(isPrime(a)==false){
@@ -11,7 +11,7 @@ RSA::generatePrime(){
 	return a;
 }
 
-RSA::isPrime(unsigned int a){
+Rsa::isPrime(unsigned int a){
 	for(int i=3;i<a;i++){
 		if(a%i==0){
 			return false;
@@ -20,7 +20,7 @@ RSA::isPrime(unsigned int a){
 	return true;
 }
 
-RSA::generateKey(){
+Rsa::generateKey(){
 	unsigned long n,phi,e,d;
 	unsigned int p,q;
 	p=this.generatePrime();
@@ -46,7 +46,7 @@ RSA::generateKey(){
 	this.setD(d);
 }
 
-RSA::gcd(unsigned long a, unsigned long b){
+Rsa::gcd(unsigned long a, unsigned long b){
 	unsigned long num, denom, rem;
 	if(a>b){
 		num=a;
@@ -65,26 +65,26 @@ RSA::gcd(unsigned long a, unsigned long b){
 	return denom;
 }
 
-RSA::getE(){
+Rsa::getE(){
 	return this._rsaKey.e;
 }
 
-RSA::setE(unsigned long e){
+Rsa::setE(unsigned long e){
 	this._rsaKey.e=e;
 }
 
-RSA::getN(){
+Rsa::getN(){
 	return this._rsaKey.n;
 }
 
-RSA::setN(unsigned long n){
+Rsa::setN(unsigned long n){
 	this._rsaKey.n=n;
 }
 
-RSA::getD(){
+Rsa::getD(){
 	return this._rsaKey.d;
 }
 
-RSA::setD(unsigned int d){
+Rsa::setD(unsigned int d){
 	this._rsaKey.d=d;
 }
