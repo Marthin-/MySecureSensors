@@ -12,11 +12,6 @@ works on OneWire every 6 to 12 months.  Patches usually wait that
 long.  If anyone is interested in more actively maintaining OneWire,
 please contact Paul.
 
-Version 2.3:
-  Unknonw chip fallback mode, Roger Clark
-  Teensy-LC compatibility, Paul Stoffregen
-  Search bug fix, Love Nystrom
-
 Version 2.2:
   Teensy 3.0 compatibility, Paul Stoffregen, paul@pjrc.com
   Arduino Due compatibility, http://arduino.cc/forum/index.php?topic=141030
@@ -344,7 +339,7 @@ void OneWire::target_search(uint8_t family_code)
 // Return TRUE  : device found, ROM number in ROM_NO buffer
 //        FALSE : device not found, end of search
 //
-uint8_t OneWire::search(uint8_t *newAddr, bool search_mode /* = true */)
+uint8_t OneWire::search(uint8_t *newAddr)
 {
    uint8_t id_bit_number;
    uint8_t last_zero, rom_byte_number, search_result;
@@ -373,11 +368,7 @@ uint8_t OneWire::search(uint8_t *newAddr, bool search_mode /* = true */)
       }
 
       // issue the search command
-      if (search_mode == true) {
-        write(0xF0);   // NORMAL SEARCH
-      } else {
-        write(0xEC);   // CONDITIONAL SEARCH
-      }
+      write(0xF0);
 
       // loop to do the search
       do
@@ -461,9 +452,8 @@ uint8_t OneWire::search(uint8_t *newAddr, bool search_mode /* = true */)
       LastDeviceFlag = FALSE;
       LastFamilyDiscrepancy = 0;
       search_result = FALSE;
-   } else {
-      for (int i = 0; i < 8; i++) newAddr[i] = ROM_NO[i];
    }
+   for (int i = 0; i < 8; i++) newAddr[i] = ROM_NO[i];
    return search_result;
   }
 

@@ -2,17 +2,24 @@
 // with the MySensors environment and is based on a sketch provided by Playing With Fusion
 // http://playingwithfusion.com/productview.php?pdid=22&catid=1001
 //
-#include "MySensor.h"  
-// the lightning sensor can communicate via SPI or I2C. This sketch uses the SPI interface
-#include "SPI.h"
+
+// Enable debug prints to serial monitor
+#define MY_DEBUG 
+
+// Enable and select radio type attached
+#define MY_RADIO_NRF24
+//#define MY_RADIO_RFM69
+
+#include <SPI.h>
+#include <MySensors.h>
 // include Playing With Fusion AXS3935 libraries
-#include "PWFusion_AS3935.h"
+#include <PWFusion_AS3935.h>
 
 // setup CS pins used for the connection with the lightning sensor
 // other connections are controlled by the SPI library)
-int8_t CS_PIN  = 8;
-int8_t SI_PIN  = 7;
-int8_t IRQ_PIN = 3;                      
+#define CS_PIN 8
+#define SI_PIN 7
+#define IRQ_PIN 3
 volatile int8_t AS3935_ISR_Trig = 0;
 
 // #defines
@@ -28,22 +35,11 @@ PWF_AS3935  lightning0(CS_PIN, IRQ_PIN, SI_PIN);
 
 #define CHILD_ID_DISTANCE 1
 #define CHILD_ID_INTENSITY 2
-MySensor gw;
 MyMessage msgDist(CHILD_ID_DISTANCE, V_DISTANCE);
 MyMessage msgInt(CHILD_ID_INTENSITY, V_VAR1);
 
 void setup()  
 { 
-  gw.begin();
-
-  // Send the sketch version information to the gateway and Controller
-  gw.sendSketchInfo("Lightning Sensor", "1.1");
-
-  // Register all sensors to gw (they will be created as child devices)
-  gw.present(CHILD_ID_DISTANCE, S_DISTANCE);
-  gw.present(CHILD_ID_INTENSITY, S_CUSTOM);
-
-  Serial.begin(115200);
   Serial.println("Playing With Fusion: AS3935 Lightning Sensor, SEN-39001");
   Serial.println("beginning boot procedure....");
   
@@ -64,13 +60,22 @@ void setup()
                   // function also powers up the chip
                   
   // enable interrupt (hook IRQ pin to Arduino Uno/Mega interrupt input: 1 -> pin 3 )
-  attachInterrupt(1, AS3935_ISR, RISING);
+  attachInterrupt(digitalPinToInterrupt(IRQ_PIN), AS3935_ISR, RISING);
   // dump the registry data to the serial port for troubleshooting purposes
   lightning0.AS3935_PrintAllRegs();
   
   // delay execution to allow chip to stabilize.
   delay(1000);
 
+}
+
+void presentation()  {
+  // Send the sketch version information to the gateway and Controller
+  sendSketchInfo("Lightning Sensor", "1.1");
+
+  // Register all sensors to gw (they will be created as child devices)
+  present(CHILD_ID_DISTANCE, S_DISTANCE);
+  present(CHILD_ID_INTENSITY, S_CUSTOM);
 }
 
 void loop()      
@@ -99,8 +104,8 @@ void loop()
     Serial.println(" kilometers");
     Serial.print("Lightning detected! Lightning Intensity: ");
     Serial.println(lightning_intensity);
-    gw.send(msgDist.set(lightning_dist_km));
-    gw.send(msgInt.set(lightning_intensity));
+    send(msgDist.set(lightning_dist_km));
+    send(msgInt.set(lightning_intensity));
   }
   else if(2 == int_src)
   {

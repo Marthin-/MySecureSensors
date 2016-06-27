@@ -1,0 +1,203 @@
+\hypertarget{test_vectors_8pde-example}{}\section{test\+\_\+vectors.\+pde}
+{\bfseries For Arduino}~\newline
+ {\bfseries Updated\+: spaniakos 2015 }~\newline
+
+
+This is an example of monte carlo test vectors, in order to justify the effectiveness of the algorithm.~\newline
+ plus is a classical approach to the \hyperlink{classAES}{A\+ES} encryption library with out the easy to use add-\/on modifications.
+
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <AES.h>}
+
+\hyperlink{classAES}{AES} aes ;
+
+byte key [2*N\_BLOCK] ;
+byte plain [N\_BLOCK] ;
+byte iv [N\_BLOCK] ;
+byte cipher [N\_BLOCK] ;
+byte check [N\_BLOCK] ;
+
+\textcolor{keywordtype}{void} loop () 
+\{\}
+
+
+\textcolor{keywordtype}{void} setup ()
+\{
+  Serial.begin (57600) ;
+  Serial.print (\textcolor{stringliteral}{"AES library test vectors"}) ;
+
+  monte\_carlo (128) ;
+
+  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} keysize = 128 ; keysize <= 256 ; keysize += 64)
+    \{
+      prekey\_test\_var\_plaintext (keysize) ;
+      prekey\_test\_var\_key (keysize) ;
+    \}
+\}
+
+
+\textcolor{keywordtype}{void} prekey\_test\_var\_plaintext (\textcolor{keywordtype}{int} bits)
+\{
+  Serial.println () ;
+  Serial.print (\textcolor{stringliteral}{"ECB Varying Plaintext "}) ;
+  Serial.print (bits) ;
+  Serial.println (\textcolor{stringliteral}{" bits"}) ;
+  Serial.println () ;
+ 
+  byte succ ;
+  set\_bits (bits, key, 0) ;  \textcolor{comment}{// all zero key}
+  succ = aes.\hyperlink{classAES_afe2900d46f475f6f3ea8d164e1581ed9}{set\_key} (key, bits) ;
+  \textcolor{keywordflow}{if} (succ != SUCCESS)
+    Serial.println (\textcolor{stringliteral}{"Failure set\_key"}) ;
+
+
+  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bitcount = 1 ; bitcount <= 128 ; bitcount++)
+    \{
+      Serial.print (\textcolor{stringliteral}{"COUNT = "}) ; Serial.println (bitcount-1) ;
+      print\_value (\textcolor{stringliteral}{"KEY = "}, key, bits) ;
+      set\_bits (128, plain, bitcount) ;
+      
+      print\_value (\textcolor{stringliteral}{"PLAINTEXT = "}, plain, 128) ;
+      
+      succ = aes.\hyperlink{classAES_a72a674e99a92e296d1bf03444fe6ea15}{encrypt} (plain, cipher) ;
+      \textcolor{keywordflow}{if} (succ != SUCCESS)
+        Serial.println (\textcolor{stringliteral}{"Failure encrypt"}) ;
+
+      print\_value (\textcolor{stringliteral}{"CIPHERTEXT = "}, cipher, 128) ;
+      
+      succ = aes.\hyperlink{classAES_abc514d1129789a60d60127f151450e9c}{decrypt} (cipher, check) ;
+      \textcolor{keywordflow}{if} (succ != SUCCESS)
+        Serial.println (\textcolor{stringliteral}{"Failure decrypt"}) ;
+
+      \textcolor{comment}{//print\_value ("CHECK = ", check, 128) ;}
+      check\_same (plain, check, 128) ;
+      Serial.println () ;
+    \}
+\}
+
+
+\textcolor{keywordtype}{void} prekey\_test\_var\_key (\textcolor{keywordtype}{int} bits)
+\{
+  Serial.println () ;
+  Serial.print (\textcolor{stringliteral}{"ECB Varying Key "}) ;
+  Serial.print (bits) ;
+  Serial.println (\textcolor{stringliteral}{" bits"}) ;
+  Serial.println () ;
+  
+  byte succ ;
+  set\_bits (128, plain, 0) ;
+
+  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} bitcount = 1 ; bitcount <= bits ; bitcount++)
+    \{
+      set\_bits (bits, key, bitcount) ;  \textcolor{comment}{// all zero key}
+      succ = aes.\hyperlink{classAES_afe2900d46f475f6f3ea8d164e1581ed9}{set\_key} (key, bits) ;
+      \textcolor{keywordflow}{if} (succ != SUCCESS)
+        Serial.println (\textcolor{stringliteral}{"Failure set\_key"}) ;
+      Serial.print (\textcolor{stringliteral}{"COUNT = "}) ; Serial.println (bitcount-1) ;
+      print\_value (\textcolor{stringliteral}{"KEY = "}, key, bits) ;
+
+      print\_value (\textcolor{stringliteral}{"PLAINTEXT = "}, plain, 128) ;
+
+      succ = aes.\hyperlink{classAES_a72a674e99a92e296d1bf03444fe6ea15}{encrypt} (plain, cipher) ;
+      \textcolor{keywordflow}{if} (succ != SUCCESS)
+        Serial.println (\textcolor{stringliteral}{"Failure encrypt"}) ;
+
+      print\_value (\textcolor{stringliteral}{"CIPHERTEXT = "}, cipher, 128) ;
+
+      succ = aes.\hyperlink{classAES_abc514d1129789a60d60127f151450e9c}{decrypt} (cipher, check) ;
+      \textcolor{keywordflow}{if} (succ != SUCCESS)
+        Serial.println (\textcolor{stringliteral}{"Failure decrypt"}) ;
+
+      check\_same (plain, check, 128) ;
+      Serial.println () ;
+    \}
+\}
+
+\textcolor{keywordtype}{void} set\_bits (\textcolor{keywordtype}{int} bits, byte * a, \textcolor{keywordtype}{int} count)
+\{
+  bits >>= 3 ;
+  byte bcount = count >> 3 ;
+  \textcolor{keywordflow}{for} (byte i = 0 ; i < bcount ; i++)
+    a [i] = 0xFF ;
+  \textcolor{keywordflow}{if} ((count & 7) != 0)
+    a [bcount++] = 0xFF & (0xFF00 >> (count & 7)) ;
+  \textcolor{keywordflow}{for} (byte i = bcount ; i < bits ; i++)
+    a [i] = 0x00 ;
+\}
+
+\textcolor{keywordtype}{void} check\_same (byte * a, byte * b, \textcolor{keywordtype}{int} bits)
+\{
+  bits >>= 3 ;
+  \textcolor{keywordflow}{for} (byte i = 0 ; i < bits ; i++)
+    \textcolor{keywordflow}{if} (a[i] != b[i])
+      \{
+        Serial.println (\textcolor{stringliteral}{"Failure plain != check"}) ;
+        return ;
+      \}
+\}
+
+\textcolor{keywordtype}{char} hex[] = \textcolor{stringliteral}{"0123456789abcdef"} ;
+
+
+\textcolor{keywordtype}{void} print\_value (\textcolor{keyword}{const} \textcolor{keywordtype}{char} * str, byte * a, \textcolor{keywordtype}{int} bits)
+\{
+  Serial.print (str) ;
+  bits >>= 3 ;
+  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0 ; i < bits ; i++)
+    \{
+      byte b = a[i] ;
+      Serial.print (hex [b >> 4]) ;
+      Serial.print (hex [b & 15]) ;
+    \}
+  Serial.println () ;
+\}
+
+byte monteplain [] = 
+  \{ 0xb9, 0x14, 0x5a, 0x76, 0x8b, 0x7d, 0xc4, 0x89, 
+    0xa0, 0x96, 0xb5, 0x46, 0xf4, 0x3b, 0x23, 0x1f \} ;
+byte montekey []   = 
+  \{ 0x13, 0x9a, 0x35, 0x42, 0x2f, 0x1d, 0x61, 0xde, 
+    0x3c, 0x91, 0x78, 0x7f, 0xe0, 0x50, 0x7a, 0xfd \} ;
+
+\textcolor{keywordtype}{void} monte\_carlo (\textcolor{keywordtype}{int} bits)
+\{
+  Serial.println () ;
+  Serial.print (\textcolor{stringliteral}{"Monte Carlo "}) ;
+  Serial.print (bits) ;
+  Serial.println (\textcolor{stringliteral}{" bits"}) ;
+  Serial.println () ;
+  byte succ ;
+  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0 ; i < 16 ; i++)
+  \{
+    plain [i] = monteplain [i] ;
+    key [i] = montekey [i] ;
+  \}
+  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0 ; i < 100 ; i++)
+    \{
+      Serial.print (\textcolor{stringliteral}{"COUNT = "}) ; Serial.println (i) ;
+      print\_value (\textcolor{stringliteral}{"KEY = "}, key, bits) ;
+      print\_value (\textcolor{stringliteral}{"PLAINTEXT = "}, plain, 128) ;
+      succ = aes.\hyperlink{classAES_afe2900d46f475f6f3ea8d164e1581ed9}{set\_key} (key, bits) ;
+      \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0 ; j < 1000 ; j++)
+        \{
+          succ = aes.\hyperlink{classAES_a72a674e99a92e296d1bf03444fe6ea15}{encrypt} (plain, cipher) ;
+          aes.\hyperlink{classAES_ae7b28053b759aea46d13f2c8ebc3b64a}{copy\_n\_bytes} (plain, cipher, 16) ;
+        \}
+      print\_value (\textcolor{stringliteral}{"CIPHERTEXT = "}, cipher, 128) ;
+      Serial.println () ;
+      \textcolor{keywordflow}{if} (bits == 128)
+        \{
+          \textcolor{keywordflow}{for} (byte k = 0 ; k < 16 ; k++)
+            key [k] ^= cipher [k] ;
+        \}
+      \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (bits == 192)
+        \{
+        \}
+      \textcolor{keywordflow}{else}
+        \{
+        \}
+    \}
+\}
+\end{DoxyCodeInclude}
+ 

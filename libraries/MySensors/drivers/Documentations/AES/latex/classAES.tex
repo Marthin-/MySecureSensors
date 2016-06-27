@@ -1,0 +1,1770 @@
+\hypertarget{classAES}{}\section{A\+ES Class Reference}
+\label{classAES}\index{A\+ES@{A\+ES}}
+
+
+{\ttfamily \#include $<$A\+E\+S.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAES_aead4c030c140418b2d2330d646f3d87f}{A\+ES} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAES}{A\+ES} constructor. \end{DoxyCompactList}\item 
+byte \hyperlink{classAES_afe2900d46f475f6f3ea8d164e1581ed9}{set\+\_\+key} (byte key\mbox{[}$\,$\mbox{]}, int keylen)
+\item 
+void \hyperlink{classAES_a12485f897e56d28e9d6b49e568d1c222}{clean} ()
+\item 
+void \hyperlink{classAES_ae7b28053b759aea46d13f2c8ebc3b64a}{copy\+\_\+n\+\_\+bytes} (byte $\ast$A\+E\+St, byte $\ast$src, byte n)
+\item 
+byte \hyperlink{classAES_a72a674e99a92e296d1bf03444fe6ea15}{encrypt} (byte plain\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]}, byte cipher\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_ae99f48bcf9c5f5c98ffb37d3912dc4d1}{cbc\+\_\+encrypt} (byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block, byte \hyperlink{classAES_a3298cab68c9486d8a2bb058c6318f72f}{iv}\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_aa3e2d95cee3d244a0fffaf8c60814cd4}{cbc\+\_\+encrypt} (byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block)
+\item 
+byte \hyperlink{classAES_abc514d1129789a60d60127f151450e9c}{decrypt} (byte cipher\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]}, byte plain\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_a2b8023781d7ddd13930bda0fd4312369}{cbc\+\_\+decrypt} (byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block, byte \hyperlink{classAES_a3298cab68c9486d8a2bb058c6318f72f}{iv}\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_a7242c64fc6c53152841ecbd840ac2a81}{cbc\+\_\+decrypt} (byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block)
+\item 
+void \hyperlink{classAES_a86f4dfa2c855aa16ef847bb1a46c66bd}{set\+\_\+\+IV} (unsigned long long int I\+V\+Cl)
+\item 
+void \hyperlink{classAES_aa64b7b326d6016963b56293323590624}{iv\+\_\+inc} ()
+\item 
+int \hyperlink{classAES_ac333f0da98cb09087770fd06d276c6aa}{get\+\_\+size} ()
+\item 
+void \hyperlink{classAES_ab0f5e7dc53c0b8277f65578765a2e911}{set\+\_\+size} (int sizel)
+\item 
+void \hyperlink{classAES_a4c540bb245286e6f6419980f8129465c}{get\+\_\+\+IV} (byte $\ast$out)
+\item 
+void \hyperlink{classAES_a628b83cd60acf674bb64f8c90e7fa84d}{calc\+\_\+size\+\_\+n\+\_\+pad} (int p\+\_\+size)
+\item 
+void \hyperlink{classAES_a58e4e3ba80940f6be851be58a8be6bbd}{pad\+Plaintext} (void $\ast$in, byte $\ast$out)
+\item 
+bool \hyperlink{classAES_ac297cda54d320b1b975e1eee96e8d547}{Check\+Pad} (byte $\ast$in, int \hyperlink{classAES_a4e16ef7cd8e240022d044a9b06086ef2}{size})
+\item 
+void \hyperlink{classAES_a6b0db893a71f8650d3e59441c23fc9dd}{print\+Array} (byte output\mbox{[}$\,$\mbox{]}, bool p\+\_\+pad=true)
+\item 
+void \hyperlink{classAES_add8ddd9cce8b4de87b9ef2ff2f5ddb29}{print\+Array} (byte output\mbox{[}$\,$\mbox{]}, int sizel)
+\item 
+void \hyperlink{classAES_a417f2c3f01927bc88c56462a0891f3c2}{do\+\_\+aes\+\_\+encrypt} (byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits, byte ivl\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+void \hyperlink{classAES_adaeab53c0a5ce4a6b1634650fb0475f2}{do\+\_\+aes\+\_\+encrypt} (byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits)
+\item 
+void \hyperlink{classAES_afd66d5b1be883ee03f2f1d99aa0611da}{do\+\_\+aes\+\_\+decrypt} (byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits, byte ivl\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+void \hyperlink{classAES_a649781b684fca61689d5ddbe7d6f498a}{do\+\_\+aes\+\_\+decrypt} (byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits)
+\item 
+double \hyperlink{classAES_a4cfe8772e20723d2f1a99427fd7067c7}{millis} ()
+\item 
+\hyperlink{classAES_aead4c030c140418b2d2330d646f3d87f}{A\+ES} ()
+\item 
+byte \hyperlink{classAES_afe2900d46f475f6f3ea8d164e1581ed9}{set\+\_\+key} (byte key\mbox{[}$\,$\mbox{]}, int keylen)
+\item 
+void \hyperlink{classAES_a12485f897e56d28e9d6b49e568d1c222}{clean} ()
+\item 
+void \hyperlink{classAES_ae7b28053b759aea46d13f2c8ebc3b64a}{copy\+\_\+n\+\_\+bytes} (byte $\ast$A\+E\+St, byte $\ast$src, byte n)
+\item 
+byte \hyperlink{classAES_a72a674e99a92e296d1bf03444fe6ea15}{encrypt} (byte plain\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]}, byte cipher\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_ae99f48bcf9c5f5c98ffb37d3912dc4d1}{cbc\+\_\+encrypt} (byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block, byte \hyperlink{classAES_a3298cab68c9486d8a2bb058c6318f72f}{iv}\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_aa3e2d95cee3d244a0fffaf8c60814cd4}{cbc\+\_\+encrypt} (byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block)
+\item 
+byte \hyperlink{classAES_abc514d1129789a60d60127f151450e9c}{decrypt} (byte cipher\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]}, byte plain\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_a2b8023781d7ddd13930bda0fd4312369}{cbc\+\_\+decrypt} (byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block, byte \hyperlink{classAES_a3298cab68c9486d8a2bb058c6318f72f}{iv}\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_a7242c64fc6c53152841ecbd840ac2a81}{cbc\+\_\+decrypt} (byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block)
+\item 
+void \hyperlink{classAES_a86f4dfa2c855aa16ef847bb1a46c66bd}{set\+\_\+\+IV} (unsigned long long int I\+V\+Cl)
+\item 
+void \hyperlink{classAES_aa64b7b326d6016963b56293323590624}{iv\+\_\+inc} ()
+\item 
+int \hyperlink{classAES_ac333f0da98cb09087770fd06d276c6aa}{get\+\_\+size} ()
+\item 
+void \hyperlink{classAES_ab0f5e7dc53c0b8277f65578765a2e911}{set\+\_\+size} (int sizel)
+\item 
+void \hyperlink{classAES_a4c540bb245286e6f6419980f8129465c}{get\+\_\+\+IV} (byte $\ast$out)
+\item 
+void \hyperlink{classAES_a628b83cd60acf674bb64f8c90e7fa84d}{calc\+\_\+size\+\_\+n\+\_\+pad} (int p\+\_\+size)
+\item 
+void \hyperlink{classAES_a58e4e3ba80940f6be851be58a8be6bbd}{pad\+Plaintext} (void $\ast$in, byte $\ast$out)
+\item 
+bool \hyperlink{classAES_ac297cda54d320b1b975e1eee96e8d547}{Check\+Pad} (byte $\ast$in, int \hyperlink{classAES_a4e16ef7cd8e240022d044a9b06086ef2}{size})
+\item 
+void \hyperlink{classAES_a6b0db893a71f8650d3e59441c23fc9dd}{print\+Array} (byte output\mbox{[}$\,$\mbox{]}, bool p\+\_\+pad=true)
+\item 
+void \hyperlink{classAES_add8ddd9cce8b4de87b9ef2ff2f5ddb29}{print\+Array} (byte output\mbox{[}$\,$\mbox{]}, int sizel)
+\item 
+void \hyperlink{classAES_a417f2c3f01927bc88c56462a0891f3c2}{do\+\_\+aes\+\_\+encrypt} (byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits, byte ivl\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+void \hyperlink{classAES_adaeab53c0a5ce4a6b1634650fb0475f2}{do\+\_\+aes\+\_\+encrypt} (byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits)
+\item 
+void \hyperlink{classAES_afd66d5b1be883ee03f2f1d99aa0611da}{do\+\_\+aes\+\_\+decrypt} (byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits, byte ivl\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+void \hyperlink{classAES_a649781b684fca61689d5ddbe7d6f498a}{do\+\_\+aes\+\_\+decrypt} (byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits)
+\item 
+double \hyperlink{classAES_a4cfe8772e20723d2f1a99427fd7067c7}{millis} ()
+\item 
+\hyperlink{classAES_aead4c030c140418b2d2330d646f3d87f}{A\+ES} ()
+\item 
+byte \hyperlink{classAES_afe2900d46f475f6f3ea8d164e1581ed9}{set\+\_\+key} (byte key\mbox{[}$\,$\mbox{]}, int keylen)
+\item 
+void \hyperlink{classAES_a12485f897e56d28e9d6b49e568d1c222}{clean} ()
+\item 
+void \hyperlink{classAES_ae7b28053b759aea46d13f2c8ebc3b64a}{copy\+\_\+n\+\_\+bytes} (byte $\ast$A\+E\+St, byte $\ast$src, byte n)
+\item 
+byte \hyperlink{classAES_a72a674e99a92e296d1bf03444fe6ea15}{encrypt} (byte plain\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]}, byte cipher\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_ae99f48bcf9c5f5c98ffb37d3912dc4d1}{cbc\+\_\+encrypt} (byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block, byte \hyperlink{classAES_a3298cab68c9486d8a2bb058c6318f72f}{iv}\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_aa3e2d95cee3d244a0fffaf8c60814cd4}{cbc\+\_\+encrypt} (byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block)
+\item 
+byte \hyperlink{classAES_abc514d1129789a60d60127f151450e9c}{decrypt} (byte cipher\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]}, byte plain\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_a2b8023781d7ddd13930bda0fd4312369}{cbc\+\_\+decrypt} (byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block, byte \hyperlink{classAES_a3298cab68c9486d8a2bb058c6318f72f}{iv}\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+byte \hyperlink{classAES_a7242c64fc6c53152841ecbd840ac2a81}{cbc\+\_\+decrypt} (byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block)
+\item 
+unsigned long long int \hyperlink{classAES_ad858d620b84502ae3e1a92e8d4904e08}{generate\+\_\+\+IV} ()
+\item 
+void \hyperlink{classAES_a86f4dfa2c855aa16ef847bb1a46c66bd}{set\+\_\+\+IV} (unsigned long long int I\+V\+Cl)
+\item 
+void \hyperlink{classAES_aa64b7b326d6016963b56293323590624}{iv\+\_\+inc} ()
+\item 
+int \hyperlink{classAES_ac333f0da98cb09087770fd06d276c6aa}{get\+\_\+size} ()
+\item 
+void \hyperlink{classAES_ab0f5e7dc53c0b8277f65578765a2e911}{set\+\_\+size} (int sizel)
+\item 
+void \hyperlink{classAES_a4c540bb245286e6f6419980f8129465c}{get\+\_\+\+IV} (byte $\ast$out)
+\item 
+void \hyperlink{classAES_a628b83cd60acf674bb64f8c90e7fa84d}{calc\+\_\+size\+\_\+n\+\_\+pad} (int p\+\_\+size)
+\item 
+void \hyperlink{classAES_a58e4e3ba80940f6be851be58a8be6bbd}{pad\+Plaintext} (void $\ast$in, byte $\ast$out)
+\item 
+bool \hyperlink{classAES_ac297cda54d320b1b975e1eee96e8d547}{Check\+Pad} (byte $\ast$in, int \hyperlink{classAES_a4e16ef7cd8e240022d044a9b06086ef2}{size})
+\item 
+void \hyperlink{classAES_a6b0db893a71f8650d3e59441c23fc9dd}{print\+Array} (byte output\mbox{[}$\,$\mbox{]}, bool p\+\_\+pad=true)
+\item 
+void \hyperlink{classAES_add8ddd9cce8b4de87b9ef2ff2f5ddb29}{print\+Array} (byte output\mbox{[}$\,$\mbox{]}, int sizel)
+\item 
+void \hyperlink{classAES_a417f2c3f01927bc88c56462a0891f3c2}{do\+\_\+aes\+\_\+encrypt} (byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits, byte ivl\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+void \hyperlink{classAES_adaeab53c0a5ce4a6b1634650fb0475f2}{do\+\_\+aes\+\_\+encrypt} (byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits)
+\item 
+void \hyperlink{classAES_afd66d5b1be883ee03f2f1d99aa0611da}{do\+\_\+aes\+\_\+decrypt} (byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits, byte ivl\mbox{[}N\+\_\+\+B\+L\+O\+CK\mbox{]})
+\item 
+void \hyperlink{classAES_a649781b684fca61689d5ddbe7d6f498a}{do\+\_\+aes\+\_\+decrypt} (byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits)
+\item 
+double \hyperlink{classAES_a4cfe8772e20723d2f1a99427fd7067c7}{millis} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classAES_a409738e82021b1ace4080d13353fe20c}{round}
+\item 
+byte \hyperlink{classAES_a376a48258a590cd475f3fee5d1b7b9ff}{key\+\_\+sched} \mbox{[}K\+E\+Y\+\_\+\+S\+C\+H\+E\+D\+U\+L\+E\+\_\+\+B\+Y\+T\+ES\mbox{]}
+\item 
+unsigned long long int \hyperlink{classAES_a414d1e8caa6e9097cdfad6db2b8798b6}{I\+VC}
+\item 
+byte \hyperlink{classAES_a3298cab68c9486d8a2bb058c6318f72f}{iv} \mbox{[}16\mbox{]}
+\item 
+int \hyperlink{classAES_a96465f7ab736930bb13b5069b61be7af}{pad}
+\item 
+int \hyperlink{classAES_a4e16ef7cd8e240022d044a9b06086ef2}{size}
+\item 
+timeval \hyperlink{classAES_a9e975134588ed42e6f6e06faaf0549fa}{tv}
+\item 
+byte \hyperlink{classAES_a746004d6335271eb4007096baedb781a}{arr\+\_\+pad} \mbox{[}15\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classAES}{A\+ES} class \begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{aes_8cpp-example}{aes.\+cpp}, \hyperlink{test_vectors_8cpp-example}{test\+\_\+vectors.\+cpp}, and \hyperlink{test_vectors_8pde-example}{test\+\_\+vectors.\+pde}.\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{A\+ES@{A\+ES}!A\+ES@{A\+ES}}
+\index{A\+ES@{A\+ES}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{A\+E\+S()}{AES()}}]{\setlength{\rightskip}{0pt plus 5cm}A\+E\+S\+::\+A\+ES (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_aead4c030c140418b2d2330d646f3d87f}{}\label{classAES_aead4c030c140418b2d2330d646f3d87f}
+
+
+\hyperlink{classAES}{A\+ES} constructor. 
+
+This function initialized an instance of \hyperlink{classAES}{A\+ES}. \index{A\+ES@{A\+ES}!A\+ES@{A\+ES}}
+\index{A\+ES@{A\+ES}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{A\+E\+S()}{AES()}}]{\setlength{\rightskip}{0pt plus 5cm}A\+E\+S\+::\+A\+ES (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_aead4c030c140418b2d2330d646f3d87f}{}\label{classAES_aead4c030c140418b2d2330d646f3d87f}
+\index{A\+ES@{A\+ES}!A\+ES@{A\+ES}}
+\index{A\+ES@{A\+ES}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{A\+E\+S()}{AES()}}]{\setlength{\rightskip}{0pt plus 5cm}A\+E\+S\+::\+A\+ES (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_aead4c030c140418b2d2330d646f3d87f}{}\label{classAES_aead4c030c140418b2d2330d646f3d87f}
+
+
+\subsection{Member Function Documentation}
+\index{A\+ES@{A\+ES}!set\+\_\+key@{set\+\_\+key}}
+\index{set\+\_\+key@{set\+\_\+key}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{set\+\_\+key(byte key[], int keylen)}{set_key(byte key[], int keylen)}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::set\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{byte}]{key\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{keylen}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_afe2900d46f475f6f3ea8d164e1581ed9}{}\label{classAES_afe2900d46f475f6f3ea8d164e1581ed9}
+Set the cipher key for the pre-\/keyed version. 
+\begin{DoxyParams}{Parameters}
+{\em key\mbox{[}$\,$\mbox{]}} & pointer to the key string. \\
+\hline
+{\em keylen} & Integer that indicates the length of the key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+N\+O\+TE\+: If the length\+\_\+type used for the key length is an unsigned 8-\/bit character, a key length of 256 bits must be entered as a length in bytes (valid inputs are hence 128, 192, 16, 24 and 32). 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{test_vectors_8cpp-example}{test\+\_\+vectors.\+cpp}, and \hyperlink{test_vectors_8pde-example}{test\+\_\+vectors.\+pde}.\end{Desc}
+\index{A\+ES@{A\+ES}!clean@{clean}}
+\index{clean@{clean}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{clean()}{clean()}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::clean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a12485f897e56d28e9d6b49e568d1c222}{}\label{classAES_a12485f897e56d28e9d6b49e568d1c222}
+clean up subkeys after use. \index{A\+ES@{A\+ES}!copy\+\_\+n\+\_\+bytes@{copy\+\_\+n\+\_\+bytes}}
+\index{copy\+\_\+n\+\_\+bytes@{copy\+\_\+n\+\_\+bytes}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{copy\+\_\+n\+\_\+bytes(byte $\ast$\+A\+E\+St, byte $\ast$src, byte n)}{copy_n_bytes(byte *AESt, byte *src, byte n)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::copy\+\_\+n\+\_\+bytes (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{A\+E\+St, }
+\item[{byte $\ast$}]{src, }
+\item[{byte}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ae7b28053b759aea46d13f2c8ebc3b64a}{}\label{classAES_ae7b28053b759aea46d13f2c8ebc3b64a}
+copying and xoring utilities. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+A\+E\+St} & byte pointer of the A\+E\+Stination array. \\
+\hline
+{\em $\ast$src} & byte pointer of the source array. \\
+\hline
+{\em n} & byte, indicating the sizeof the bytes to be copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+this is an alternative for memcpy(void $\ast$s1,const void $\ast$s2, site\+\_\+t n), i have not updated the function in the implementation yet, but it is considered a future plan. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{test_vectors_8cpp-example}{test\+\_\+vectors.\+cpp}, and \hyperlink{test_vectors_8pde-example}{test\+\_\+vectors.\+pde}.\end{Desc}
+\index{A\+ES@{A\+ES}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{encrypt(byte plain[N\+\_\+\+B\+L\+O\+CK], byte cipher[N\+\_\+\+B\+L\+O\+CK])}{encrypt(byte plain[N_BLOCK], byte cipher[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::encrypt (
+\begin{DoxyParamCaption}
+\item[{byte}]{plain\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}, }
+\item[{byte}]{cipher\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a72a674e99a92e296d1bf03444fe6ea15}{}\label{classAES_a72a674e99a92e296d1bf03444fe6ea15}
+Encrypt a single block of 16 bytes . 
+\begin{DoxyParams}{Parameters}
+{\em plain} & Array of the plaintext. \\
+\hline
+{\em cipher} & Array of the ciphertext. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The N\+\_\+\+B\+L\+O\+CK is defined in A\+E\+S\+\_\+config.\+h as, 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define N\_ROW                   4}
+\textcolor{preprocessor}{     #define N\_COL                   4}
+\textcolor{preprocessor}{     #define N\_BLOCK   (N\_ROW * N\_COL)}
+\end{DoxyCode}
+ Changed to that will change the Block\+\_\+size. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{test_vectors_8cpp-example}{test\+\_\+vectors.\+cpp}, and \hyperlink{test_vectors_8pde-example}{test\+\_\+vectors.\+pde}.\end{Desc}
+\index{A\+ES@{A\+ES}!cbc\+\_\+encrypt@{cbc\+\_\+encrypt}}
+\index{cbc\+\_\+encrypt@{cbc\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+encrypt(byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block, byte iv[N\+\_\+\+B\+L\+O\+CK])}{cbc_encrypt(byte *plain, byte *cipher, int n_block, byte iv[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{n\+\_\+block, }
+\item[{byte}]{iv\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ae99f48bcf9c5f5c98ffb37d3912dc4d1}{}\label{classAES_ae99f48bcf9c5f5c98ffb37d3912dc4d1}
+C\+BC encrypt a number of blocks (input and return an IV).
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+{\em iv} & byte Array that holds the IV (initialization vector). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!cbc\+\_\+encrypt@{cbc\+\_\+encrypt}}
+\index{cbc\+\_\+encrypt@{cbc\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+encrypt(byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block)}{cbc_encrypt(byte *plain, byte *cipher, int n_block)}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{n\+\_\+block}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_aa3e2d95cee3d244a0fffaf8c60814cd4}{}\label{classAES_aa3e2d95cee3d244a0fffaf8c60814cd4}
+C\+BC encrypt a number of blocks (input and return an IV).
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{decrypt(byte cipher[N\+\_\+\+B\+L\+O\+CK], byte plain[N\+\_\+\+B\+L\+O\+CK])}{decrypt(byte cipher[N_BLOCK], byte plain[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::decrypt (
+\begin{DoxyParamCaption}
+\item[{byte}]{cipher\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}, }
+\item[{byte}]{plain\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_abc514d1129789a60d60127f151450e9c}{}\label{classAES_abc514d1129789a60d60127f151450e9c}
+Decrypt a single block of 16 bytes 
+\begin{DoxyParams}{Parameters}
+{\em cipher} & Array of the ciphertext. \\
+\hline
+{\em plain} & Array of the plaintext. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The N\+\_\+\+B\+L\+O\+CK is defined in A\+E\+S\+\_\+config.\+h as, 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define N\_ROW                   4}
+\textcolor{preprocessor}{     #define N\_COL                   4}
+\textcolor{preprocessor}{     #define N\_BLOCK   (N\_ROW * N\_COL)}
+\end{DoxyCode}
+ Changed to that will change the Block\+\_\+size. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{test_vectors_8cpp-example}{test\+\_\+vectors.\+cpp}, and \hyperlink{test_vectors_8pde-example}{test\+\_\+vectors.\+pde}.\end{Desc}
+\index{A\+ES@{A\+ES}!cbc\+\_\+decrypt@{cbc\+\_\+decrypt}}
+\index{cbc\+\_\+decrypt@{cbc\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+decrypt(byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block, byte iv[N\+\_\+\+B\+L\+O\+CK])}{cbc_decrypt(byte *cipher, byte *plain, int n_block, byte iv[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{n\+\_\+block, }
+\item[{byte}]{iv\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a2b8023781d7ddd13930bda0fd4312369}{}\label{classAES_a2b8023781d7ddd13930bda0fd4312369}
+C\+BC decrypt a number of blocks (input and return an IV)
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+{\em iv} & byte Array that holds the IV (initialization vector). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!cbc\+\_\+decrypt@{cbc\+\_\+decrypt}}
+\index{cbc\+\_\+decrypt@{cbc\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+decrypt(byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block)}{cbc_decrypt(byte *cipher, byte *plain, int n_block)}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{n\+\_\+block}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a7242c64fc6c53152841ecbd840ac2a81}{}\label{classAES_a7242c64fc6c53152841ecbd840ac2a81}
+C\+BC decrypt a number of blocks (input and return an IV)
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!set\+\_\+\+IV@{set\+\_\+\+IV}}
+\index{set\+\_\+\+IV@{set\+\_\+\+IV}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{set\+\_\+\+I\+V(unsigned long long int I\+V\+Cl)}{set_IV(unsigned long long int IVCl)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::set\+\_\+\+IV (
+\begin{DoxyParamCaption}
+\item[{unsigned long long int}]{I\+V\+Cl}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a86f4dfa2c855aa16ef847bb1a46c66bd}{}\label{classAES_a86f4dfa2c855aa16ef847bb1a46c66bd}
+Sets IV (initialization vector) and I\+VC (IV counter). This function changes the ivc and iv variables needed for \hyperlink{classAES}{A\+ES}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\+V\+Cl} & int or hex value of iv , ex. 0x0000000000000001 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+example\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} my\_iv = 01234567; 
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!iv\+\_\+inc@{iv\+\_\+inc}}
+\index{iv\+\_\+inc@{iv\+\_\+inc}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{iv\+\_\+inc()}{iv_inc()}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::iv\+\_\+inc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_aa64b7b326d6016963b56293323590624}{}\label{classAES_aa64b7b326d6016963b56293323590624}
+increase the iv (initialization vector) and I\+VC (IV counter) by 1
+
+This function increased the VI by one step in order to have a different IV each time \index{A\+ES@{A\+ES}!get\+\_\+size@{get\+\_\+size}}
+\index{get\+\_\+size@{get\+\_\+size}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{get\+\_\+size()}{get_size()}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+E\+S\+::get\+\_\+size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ac333f0da98cb09087770fd06d276c6aa}{}\label{classAES_ac333f0da98cb09087770fd06d276c6aa}
+Getter method for size
+
+This function return the size \begin{DoxyReturn}{Returns}
+an integer, that is the size of the of the padded plaintext, thus, the size of the ciphertext. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{aes_8cpp-example}{aes.\+cpp}.\end{Desc}
+\index{A\+ES@{A\+ES}!set\+\_\+size@{set\+\_\+size}}
+\index{set\+\_\+size@{set\+\_\+size}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{set\+\_\+size(int sizel)}{set_size(int sizel)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::set\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{int}]{sizel}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ab0f5e7dc53c0b8277f65578765a2e911}{}\label{classAES_ab0f5e7dc53c0b8277f65578765a2e911}
+Setter method for size
+
+This function sets the size of the plaintext+pad \index{A\+ES@{A\+ES}!get\+\_\+\+IV@{get\+\_\+\+IV}}
+\index{get\+\_\+\+IV@{get\+\_\+\+IV}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{get\+\_\+\+I\+V(byte $\ast$out)}{get_IV(byte *out)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::get\+\_\+\+IV (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a4c540bb245286e6f6419980f8129465c}{}\label{classAES_a4c540bb245286e6f6419980f8129465c}
+Getter method for IV
+
+This function return the IV 
+\begin{DoxyParams}{Parameters}
+{\em out} & byte pointer that gets the IV. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none, the IV is writed to the out pointer. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{aes_8cpp-example}{aes.\+cpp}.\end{Desc}
+\index{A\+ES@{A\+ES}!calc\+\_\+size\+\_\+n\+\_\+pad@{calc\+\_\+size\+\_\+n\+\_\+pad}}
+\index{calc\+\_\+size\+\_\+n\+\_\+pad@{calc\+\_\+size\+\_\+n\+\_\+pad}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{calc\+\_\+size\+\_\+n\+\_\+pad(int p\+\_\+size)}{calc_size_n_pad(int p_size)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::calc\+\_\+size\+\_\+n\+\_\+pad (
+\begin{DoxyParamCaption}
+\item[{int}]{p\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a628b83cd60acf674bb64f8c90e7fa84d}{}\label{classAES_a628b83cd60acf674bb64f8c90e7fa84d}
+Calculates the size of the plaintext and the padding.
+
+Calculates the size of theplaintext with the padding and the size of the padding needed. Moreover it stores them in their class variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+size} & the size of the byte array ex sizeof(plaintext) \\
+\hline
+\end{DoxyParams}
+\index{A\+ES@{A\+ES}!pad\+Plaintext@{pad\+Plaintext}}
+\index{pad\+Plaintext@{pad\+Plaintext}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{pad\+Plaintext(void $\ast$in, byte $\ast$out)}{padPlaintext(void *in, byte *out)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::pad\+Plaintext (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{in, }
+\item[{byte $\ast$}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a58e4e3ba80940f6be851be58a8be6bbd}{}\label{classAES_a58e4e3ba80940f6be851be58a8be6bbd}
+Pads the plaintext
+
+This function pads the plaintext and returns an char array with the plaintext and the padding in order for the plaintext to be compatible with 16bit size blocks required by \hyperlink{classAES}{A\+ES}
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the string of the plaintext in a byte array \\
+\hline
+{\em out} & The string of the out array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no return, The padded plaintext is stored in the out pointer. 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!Check\+Pad@{Check\+Pad}}
+\index{Check\+Pad@{Check\+Pad}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{Check\+Pad(byte $\ast$in, int size)}{CheckPad(byte *in, int size)}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+E\+S\+::\+Check\+Pad (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{in, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ac297cda54d320b1b975e1eee96e8d547}{}\label{classAES_ac297cda54d320b1b975e1eee96e8d547}
+Check the if the padding is correct.
+
+This functions checks the padding of the plaintext.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the string of the plaintext in a byte array \\
+\hline
+{\em size} & the size of the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if correct / false if not 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!print\+Array@{print\+Array}}
+\index{print\+Array@{print\+Array}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{print\+Array(byte output[], bool p\+\_\+pad=true)}{printArray(byte output[], bool p_pad=true)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::print\+Array (
+\begin{DoxyParamCaption}
+\item[{byte}]{output\mbox{[}$\,$\mbox{]}, }
+\item[{bool}]{p\+\_\+pad = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a6b0db893a71f8650d3e59441c23fc9dd}{}\label{classAES_a6b0db893a71f8650d3e59441c23fc9dd}
+Prints the array given.
+
+This function prints the given array and pad, It is mainlly used for debugging purpuses or to output the string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\mbox{[}$\,$\mbox{]}} & the string of the text in a byte array \\
+\hline
+{\em p\+\_\+pad} & optional, used to print with out the padding characters \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{aes_8cpp-example}{aes.\+cpp}.\end{Desc}
+\index{A\+ES@{A\+ES}!print\+Array@{print\+Array}}
+\index{print\+Array@{print\+Array}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{print\+Array(byte output[], int sizel)}{printArray(byte output[], int sizel)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::print\+Array (
+\begin{DoxyParamCaption}
+\item[{byte}]{output\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{sizel}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_add8ddd9cce8b4de87b9ef2ff2f5ddb29}{}\label{classAES_add8ddd9cce8b4de87b9ef2ff2f5ddb29}
+Prints the array given.
+
+This function prints the given array in Hexadecimal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\mbox{[}$\,$\mbox{]}} & the string of the text in a byte array \\
+\hline
+{\em sizel} & the size of the array. \\
+\hline
+\end{DoxyParams}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}}
+\index{do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+encrypt(byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits, byte ivl[N\+\_\+\+B\+L\+O\+CK])}{do_aes_encrypt(byte *plain, int size_p, byte *cipher, byte *key, int bits, byte ivl[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{size\+\_\+p, }
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits, }
+\item[{byte}]{ivl\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a417f2c3f01927bc88c56462a0891f3c2}{}\label{classAES_a417f2c3f01927bc88c56462a0891f3c2}
+User friendly implementation of A\+E\+S-\/\+C\+BC encryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em size\+\_\+p} & size of the plaintext \\
+\hline
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+{\em ivl} & the initialization vector IV that will be used for encryption. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{aes_8cpp-example}{aes.\+cpp}.\end{Desc}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}}
+\index{do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+encrypt(byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits)}{do_aes_encrypt(byte *plain, int size_p, byte *cipher, byte *key, int bits)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{size\+\_\+p, }
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_adaeab53c0a5ce4a6b1634650fb0475f2}{}\label{classAES_adaeab53c0a5ce4a6b1634650fb0475f2}
+User friendly implementation of A\+E\+S-\/\+C\+BC encryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em size\+\_\+p} & size of the plaintext \\
+\hline
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}}
+\index{do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+decrypt(byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits, byte ivl[N\+\_\+\+B\+L\+O\+CK])}{do_aes_decrypt(byte *cipher, int size_c, byte *plain, byte *key, int bits, byte ivl[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{size\+\_\+c, }
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits, }
+\item[{byte}]{ivl\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_afd66d5b1be883ee03f2f1d99aa0611da}{}\label{classAES_afd66d5b1be883ee03f2f1d99aa0611da}
+User friendly implementation of A\+E\+S-\/\+C\+BC decryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em size\+\_\+c} & size of the ciphertext \\
+\hline
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+{\em ivl} & the initialization vector IV that will be used for decryption. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}}
+\index{do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+decrypt(byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits)}{do_aes_decrypt(byte *cipher, int size_c, byte *plain, byte *key, int bits)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{size\+\_\+c, }
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a649781b684fca61689d5ddbe7d6f498a}{}\label{classAES_a649781b684fca61689d5ddbe7d6f498a}
+User friendly implementation of A\+E\+S-\/\+C\+BC decryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em size\+\_\+c} & size of the ciphertext \\
+\hline
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!millis@{millis}}
+\index{millis@{millis}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{millis()}{millis()}}]{\setlength{\rightskip}{0pt plus 5cm}double A\+E\+S\+::millis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a4cfe8772e20723d2f1a99427fd7067c7}{}\label{classAES_a4cfe8772e20723d2f1a99427fd7067c7}
+used in linux in order to retrieve the time in milliseconds.
+
+\begin{DoxyReturn}{Returns}
+returns the milliseconds in a double format. 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!set\+\_\+key@{set\+\_\+key}}
+\index{set\+\_\+key@{set\+\_\+key}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{set\+\_\+key(byte key[], int keylen)}{set_key(byte key[], int keylen)}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::set\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{byte}]{key\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{keylen}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_afe2900d46f475f6f3ea8d164e1581ed9}{}\label{classAES_afe2900d46f475f6f3ea8d164e1581ed9}
+Set the cipher key for the pre-\/keyed version. 
+\begin{DoxyParams}{Parameters}
+{\em key\mbox{[}$\,$\mbox{]}} & pointer to the key string. \\
+\hline
+{\em keylen} & Integer that indicates the length of the key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+N\+O\+TE\+: If the length\+\_\+type used for the key length is an unsigned 8-\/bit character, a key length of 256 bits must be entered as a length in bytes (valid inputs are hence 128, 192, 16, 24 and 32). 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!clean@{clean}}
+\index{clean@{clean}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{clean()}{clean()}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::clean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a12485f897e56d28e9d6b49e568d1c222}{}\label{classAES_a12485f897e56d28e9d6b49e568d1c222}
+clean up subkeys after use. \index{A\+ES@{A\+ES}!copy\+\_\+n\+\_\+bytes@{copy\+\_\+n\+\_\+bytes}}
+\index{copy\+\_\+n\+\_\+bytes@{copy\+\_\+n\+\_\+bytes}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{copy\+\_\+n\+\_\+bytes(byte $\ast$\+A\+E\+St, byte $\ast$src, byte n)}{copy_n_bytes(byte *AESt, byte *src, byte n)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::copy\+\_\+n\+\_\+bytes (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{A\+E\+St, }
+\item[{byte $\ast$}]{src, }
+\item[{byte}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ae7b28053b759aea46d13f2c8ebc3b64a}{}\label{classAES_ae7b28053b759aea46d13f2c8ebc3b64a}
+copying and xoring utilities. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+A\+E\+St} & byte pointer of the A\+E\+Stination array. \\
+\hline
+{\em $\ast$src} & byte pointer of the source array. \\
+\hline
+{\em n} & byte, indicating the sizeof the bytes to be copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+this is an alternative for memcpy(void $\ast$s1,const void $\ast$s2, site\+\_\+t n), i have not updated the function in the implementation yet, but it is considered a future plan. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{encrypt(byte plain[N\+\_\+\+B\+L\+O\+CK], byte cipher[N\+\_\+\+B\+L\+O\+CK])}{encrypt(byte plain[N_BLOCK], byte cipher[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::encrypt (
+\begin{DoxyParamCaption}
+\item[{byte}]{plain\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}, }
+\item[{byte}]{cipher\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a72a674e99a92e296d1bf03444fe6ea15}{}\label{classAES_a72a674e99a92e296d1bf03444fe6ea15}
+Encrypt a single block of 16 bytes . 
+\begin{DoxyParams}{Parameters}
+{\em plain} & Array of the plaintext. \\
+\hline
+{\em cipher} & Array of the ciphertext. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The N\+\_\+\+B\+L\+O\+CK is defined in A\+E\+S\+\_\+config.\+h as, 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define N\_ROW                   4}
+\textcolor{preprocessor}{     #define N\_COL                   4}
+\textcolor{preprocessor}{     #define N\_BLOCK   (N\_ROW * N\_COL)}
+\end{DoxyCode}
+ Changed to that will change the Block\+\_\+size. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!cbc\+\_\+encrypt@{cbc\+\_\+encrypt}}
+\index{cbc\+\_\+encrypt@{cbc\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+encrypt(byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block, byte iv[N\+\_\+\+B\+L\+O\+CK])}{cbc_encrypt(byte *plain, byte *cipher, int n_block, byte iv[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{n\+\_\+block, }
+\item[{byte}]{iv\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ae99f48bcf9c5f5c98ffb37d3912dc4d1}{}\label{classAES_ae99f48bcf9c5f5c98ffb37d3912dc4d1}
+C\+BC encrypt a number of blocks (input and return an IV).
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+{\em iv} & byte Array that holds the IV (initialization vector). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!cbc\+\_\+encrypt@{cbc\+\_\+encrypt}}
+\index{cbc\+\_\+encrypt@{cbc\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+encrypt(byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block)}{cbc_encrypt(byte *plain, byte *cipher, int n_block)}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{n\+\_\+block}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_aa3e2d95cee3d244a0fffaf8c60814cd4}{}\label{classAES_aa3e2d95cee3d244a0fffaf8c60814cd4}
+C\+BC encrypt a number of blocks (input and return an IV).
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{decrypt(byte cipher[N\+\_\+\+B\+L\+O\+CK], byte plain[N\+\_\+\+B\+L\+O\+CK])}{decrypt(byte cipher[N_BLOCK], byte plain[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::decrypt (
+\begin{DoxyParamCaption}
+\item[{byte}]{cipher\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}, }
+\item[{byte}]{plain\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_abc514d1129789a60d60127f151450e9c}{}\label{classAES_abc514d1129789a60d60127f151450e9c}
+Decrypt a single block of 16 bytes 
+\begin{DoxyParams}{Parameters}
+{\em cipher} & Array of the ciphertext. \\
+\hline
+{\em plain} & Array of the plaintext. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The N\+\_\+\+B\+L\+O\+CK is defined in A\+E\+S\+\_\+config.\+h as, 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define N\_ROW                   4}
+\textcolor{preprocessor}{     #define N\_COL                   4}
+\textcolor{preprocessor}{     #define N\_BLOCK   (N\_ROW * N\_COL)}
+\end{DoxyCode}
+ Changed to that will change the Block\+\_\+size. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!cbc\+\_\+decrypt@{cbc\+\_\+decrypt}}
+\index{cbc\+\_\+decrypt@{cbc\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+decrypt(byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block, byte iv[N\+\_\+\+B\+L\+O\+CK])}{cbc_decrypt(byte *cipher, byte *plain, int n_block, byte iv[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{n\+\_\+block, }
+\item[{byte}]{iv\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a2b8023781d7ddd13930bda0fd4312369}{}\label{classAES_a2b8023781d7ddd13930bda0fd4312369}
+C\+BC decrypt a number of blocks (input and return an IV)
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+{\em iv} & byte Array that holds the IV (initialization vector). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!cbc\+\_\+decrypt@{cbc\+\_\+decrypt}}
+\index{cbc\+\_\+decrypt@{cbc\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+decrypt(byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block)}{cbc_decrypt(byte *cipher, byte *plain, int n_block)}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{n\+\_\+block}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a7242c64fc6c53152841ecbd840ac2a81}{}\label{classAES_a7242c64fc6c53152841ecbd840ac2a81}
+C\+BC decrypt a number of blocks (input and return an IV)
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!set\+\_\+\+IV@{set\+\_\+\+IV}}
+\index{set\+\_\+\+IV@{set\+\_\+\+IV}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{set\+\_\+\+I\+V(unsigned long long int I\+V\+Cl)}{set_IV(unsigned long long int IVCl)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::set\+\_\+\+IV (
+\begin{DoxyParamCaption}
+\item[{unsigned long long int}]{I\+V\+Cl}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a86f4dfa2c855aa16ef847bb1a46c66bd}{}\label{classAES_a86f4dfa2c855aa16ef847bb1a46c66bd}
+Sets IV (initialization vector) and I\+VC (IV counter). This function changes the ivc and iv variables needed for \hyperlink{classAES}{A\+ES}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\+V\+Cl} & int or hex value of iv , ex. 0x0000000000000001 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+example\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} my\_iv = 01234567; 
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!iv\+\_\+inc@{iv\+\_\+inc}}
+\index{iv\+\_\+inc@{iv\+\_\+inc}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{iv\+\_\+inc()}{iv_inc()}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::iv\+\_\+inc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_aa64b7b326d6016963b56293323590624}{}\label{classAES_aa64b7b326d6016963b56293323590624}
+increase the iv (initialization vector) and I\+VC (IV counter) by 1
+
+This function increased the VI by one step in order to have a different IV each time \index{A\+ES@{A\+ES}!get\+\_\+size@{get\+\_\+size}}
+\index{get\+\_\+size@{get\+\_\+size}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{get\+\_\+size()}{get_size()}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+E\+S\+::get\+\_\+size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ac333f0da98cb09087770fd06d276c6aa}{}\label{classAES_ac333f0da98cb09087770fd06d276c6aa}
+Getter method for size
+
+This function return the size \begin{DoxyReturn}{Returns}
+an integer, that is the size of the of the padded plaintext, thus, the size of the ciphertext. 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!set\+\_\+size@{set\+\_\+size}}
+\index{set\+\_\+size@{set\+\_\+size}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{set\+\_\+size(int sizel)}{set_size(int sizel)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::set\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{int}]{sizel}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ab0f5e7dc53c0b8277f65578765a2e911}{}\label{classAES_ab0f5e7dc53c0b8277f65578765a2e911}
+Setter method for size
+
+This function sets the size of the plaintext+pad \index{A\+ES@{A\+ES}!get\+\_\+\+IV@{get\+\_\+\+IV}}
+\index{get\+\_\+\+IV@{get\+\_\+\+IV}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{get\+\_\+\+I\+V(byte $\ast$out)}{get_IV(byte *out)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::get\+\_\+\+IV (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a4c540bb245286e6f6419980f8129465c}{}\label{classAES_a4c540bb245286e6f6419980f8129465c}
+Getter method for IV
+
+This function return the IV 
+\begin{DoxyParams}{Parameters}
+{\em out} & byte pointer that gets the IV. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none, the IV is writed to the out pointer. 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!calc\+\_\+size\+\_\+n\+\_\+pad@{calc\+\_\+size\+\_\+n\+\_\+pad}}
+\index{calc\+\_\+size\+\_\+n\+\_\+pad@{calc\+\_\+size\+\_\+n\+\_\+pad}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{calc\+\_\+size\+\_\+n\+\_\+pad(int p\+\_\+size)}{calc_size_n_pad(int p_size)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::calc\+\_\+size\+\_\+n\+\_\+pad (
+\begin{DoxyParamCaption}
+\item[{int}]{p\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a628b83cd60acf674bb64f8c90e7fa84d}{}\label{classAES_a628b83cd60acf674bb64f8c90e7fa84d}
+Calculates the size of the plaintext and the padding.
+
+Calculates the size of theplaintext with the padding and the size of the padding needed. Moreover it stores them in their class variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+size} & the size of the byte array ex sizeof(plaintext) \\
+\hline
+\end{DoxyParams}
+\index{A\+ES@{A\+ES}!pad\+Plaintext@{pad\+Plaintext}}
+\index{pad\+Plaintext@{pad\+Plaintext}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{pad\+Plaintext(void $\ast$in, byte $\ast$out)}{padPlaintext(void *in, byte *out)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::pad\+Plaintext (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{in, }
+\item[{byte $\ast$}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a58e4e3ba80940f6be851be58a8be6bbd}{}\label{classAES_a58e4e3ba80940f6be851be58a8be6bbd}
+Pads the plaintext
+
+This function pads the plaintext and returns an char array with the plaintext and the padding in order for the plaintext to be compatible with 16bit size blocks required by \hyperlink{classAES}{A\+ES}
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the string of the plaintext in a byte array \\
+\hline
+{\em out} & The string of the out array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no return, The padded plaintext is stored in the out pointer. 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!Check\+Pad@{Check\+Pad}}
+\index{Check\+Pad@{Check\+Pad}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{Check\+Pad(byte $\ast$in, int size)}{CheckPad(byte *in, int size)}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+E\+S\+::\+Check\+Pad (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{in, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ac297cda54d320b1b975e1eee96e8d547}{}\label{classAES_ac297cda54d320b1b975e1eee96e8d547}
+Check the if the padding is correct.
+
+This functions checks the padding of the plaintext.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the string of the plaintext in a byte array \\
+\hline
+{\em size} & the size of the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if correct / false if not 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!print\+Array@{print\+Array}}
+\index{print\+Array@{print\+Array}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{print\+Array(byte output[], bool p\+\_\+pad=true)}{printArray(byte output[], bool p_pad=true)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::print\+Array (
+\begin{DoxyParamCaption}
+\item[{byte}]{output\mbox{[}$\,$\mbox{]}, }
+\item[{bool}]{p\+\_\+pad = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a6b0db893a71f8650d3e59441c23fc9dd}{}\label{classAES_a6b0db893a71f8650d3e59441c23fc9dd}
+Prints the array given.
+
+This function prints the given array and pad, It is mainlly used for debugging purpuses or to output the string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\mbox{[}$\,$\mbox{]}} & the string of the text in a byte array \\
+\hline
+{\em p\+\_\+pad} & optional, used to print with out the padding characters \\
+\hline
+\end{DoxyParams}
+\index{A\+ES@{A\+ES}!print\+Array@{print\+Array}}
+\index{print\+Array@{print\+Array}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{print\+Array(byte output[], int sizel)}{printArray(byte output[], int sizel)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::print\+Array (
+\begin{DoxyParamCaption}
+\item[{byte}]{output\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{sizel}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_add8ddd9cce8b4de87b9ef2ff2f5ddb29}{}\label{classAES_add8ddd9cce8b4de87b9ef2ff2f5ddb29}
+Prints the array given.
+
+This function prints the given array in Hexadecimal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\mbox{[}$\,$\mbox{]}} & the string of the text in a byte array \\
+\hline
+{\em sizel} & the size of the array. \\
+\hline
+\end{DoxyParams}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}}
+\index{do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+encrypt(byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits, byte ivl[N\+\_\+\+B\+L\+O\+CK])}{do_aes_encrypt(byte *plain, int size_p, byte *cipher, byte *key, int bits, byte ivl[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{size\+\_\+p, }
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits, }
+\item[{byte}]{ivl\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a417f2c3f01927bc88c56462a0891f3c2}{}\label{classAES_a417f2c3f01927bc88c56462a0891f3c2}
+User friendly implementation of A\+E\+S-\/\+C\+BC encryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em size\+\_\+p} & size of the plaintext \\
+\hline
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+{\em ivl} & the initialization vector IV that will be used for encryption. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}}
+\index{do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+encrypt(byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits)}{do_aes_encrypt(byte *plain, int size_p, byte *cipher, byte *key, int bits)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{size\+\_\+p, }
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_adaeab53c0a5ce4a6b1634650fb0475f2}{}\label{classAES_adaeab53c0a5ce4a6b1634650fb0475f2}
+User friendly implementation of A\+E\+S-\/\+C\+BC encryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em size\+\_\+p} & size of the plaintext \\
+\hline
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}}
+\index{do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+decrypt(byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits, byte ivl[N\+\_\+\+B\+L\+O\+CK])}{do_aes_decrypt(byte *cipher, int size_c, byte *plain, byte *key, int bits, byte ivl[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{size\+\_\+c, }
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits, }
+\item[{byte}]{ivl\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_afd66d5b1be883ee03f2f1d99aa0611da}{}\label{classAES_afd66d5b1be883ee03f2f1d99aa0611da}
+User friendly implementation of A\+E\+S-\/\+C\+BC decryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em size\+\_\+c} & size of the ciphertext \\
+\hline
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+{\em ivl} & the initialization vector IV that will be used for decryption. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}}
+\index{do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+decrypt(byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits)}{do_aes_decrypt(byte *cipher, int size_c, byte *plain, byte *key, int bits)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{size\+\_\+c, }
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a649781b684fca61689d5ddbe7d6f498a}{}\label{classAES_a649781b684fca61689d5ddbe7d6f498a}
+User friendly implementation of A\+E\+S-\/\+C\+BC decryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em size\+\_\+c} & size of the ciphertext \\
+\hline
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!millis@{millis}}
+\index{millis@{millis}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{millis()}{millis()}}]{\setlength{\rightskip}{0pt plus 5cm}double A\+E\+S\+::millis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a4cfe8772e20723d2f1a99427fd7067c7}{}\label{classAES_a4cfe8772e20723d2f1a99427fd7067c7}
+used in linux in order to retrieve the time in milliseconds.
+
+\begin{DoxyReturn}{Returns}
+returns the milliseconds in a double format. 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!set\+\_\+key@{set\+\_\+key}}
+\index{set\+\_\+key@{set\+\_\+key}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{set\+\_\+key(byte key[], int keylen)}{set_key(byte key[], int keylen)}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::set\+\_\+key (
+\begin{DoxyParamCaption}
+\item[{byte}]{key\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{keylen}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_afe2900d46f475f6f3ea8d164e1581ed9}{}\label{classAES_afe2900d46f475f6f3ea8d164e1581ed9}
+Set the cipher key for the pre-\/keyed version. 
+\begin{DoxyParams}{Parameters}
+{\em key\mbox{[}$\,$\mbox{]}} & pointer to the key string. \\
+\hline
+{\em keylen} & Integer that indicates the length of the key. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+N\+O\+TE\+: If the length\+\_\+type used for the key length is an unsigned 8-\/bit character, a key length of 256 bits must be entered as a length in bytes (valid inputs are hence 128, 192, 16, 24 and 32). 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!clean@{clean}}
+\index{clean@{clean}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{clean()}{clean()}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::clean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a12485f897e56d28e9d6b49e568d1c222}{}\label{classAES_a12485f897e56d28e9d6b49e568d1c222}
+clean up subkeys after use. \index{A\+ES@{A\+ES}!copy\+\_\+n\+\_\+bytes@{copy\+\_\+n\+\_\+bytes}}
+\index{copy\+\_\+n\+\_\+bytes@{copy\+\_\+n\+\_\+bytes}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{copy\+\_\+n\+\_\+bytes(byte $\ast$\+A\+E\+St, byte $\ast$src, byte n)}{copy_n_bytes(byte *AESt, byte *src, byte n)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::copy\+\_\+n\+\_\+bytes (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{A\+E\+St, }
+\item[{byte $\ast$}]{src, }
+\item[{byte}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ae7b28053b759aea46d13f2c8ebc3b64a}{}\label{classAES_ae7b28053b759aea46d13f2c8ebc3b64a}
+copying and xoring utilities. 
+\begin{DoxyParams}{Parameters}
+{\em $\ast$\+A\+E\+St} & byte pointer of the A\+E\+Stination array. \\
+\hline
+{\em $\ast$src} & byte pointer of the source array. \\
+\hline
+{\em n} & byte, indicating the sizeof the bytes to be copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+this is an alternative for memcpy(void $\ast$s1,const void $\ast$s2, site\+\_\+t n), i have not updated the function in the implementation yet, but it is considered a future plan. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{encrypt(byte plain[N\+\_\+\+B\+L\+O\+CK], byte cipher[N\+\_\+\+B\+L\+O\+CK])}{encrypt(byte plain[N_BLOCK], byte cipher[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::encrypt (
+\begin{DoxyParamCaption}
+\item[{byte}]{plain\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}, }
+\item[{byte}]{cipher\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a72a674e99a92e296d1bf03444fe6ea15}{}\label{classAES_a72a674e99a92e296d1bf03444fe6ea15}
+Encrypt a single block of 16 bytes . 
+\begin{DoxyParams}{Parameters}
+{\em plain} & Array of the plaintext. \\
+\hline
+{\em cipher} & Array of the ciphertext. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The N\+\_\+\+B\+L\+O\+CK is defined in A\+E\+S\+\_\+config.\+h as, 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define N\_ROW                   4}
+\textcolor{preprocessor}{     #define N\_COL                   4}
+\textcolor{preprocessor}{     #define N\_BLOCK   (N\_ROW * N\_COL)}
+\end{DoxyCode}
+ Changed to that will change the Block\+\_\+size. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!cbc\+\_\+encrypt@{cbc\+\_\+encrypt}}
+\index{cbc\+\_\+encrypt@{cbc\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+encrypt(byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block, byte iv[N\+\_\+\+B\+L\+O\+CK])}{cbc_encrypt(byte *plain, byte *cipher, int n_block, byte iv[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{n\+\_\+block, }
+\item[{byte}]{iv\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ae99f48bcf9c5f5c98ffb37d3912dc4d1}{}\label{classAES_ae99f48bcf9c5f5c98ffb37d3912dc4d1}
+C\+BC encrypt a number of blocks (input and return an IV).
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+{\em iv} & byte Array that holds the IV (initialization vector). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!cbc\+\_\+encrypt@{cbc\+\_\+encrypt}}
+\index{cbc\+\_\+encrypt@{cbc\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+encrypt(byte $\ast$plain, byte $\ast$cipher, int n\+\_\+block)}{cbc_encrypt(byte *plain, byte *cipher, int n_block)}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{n\+\_\+block}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_aa3e2d95cee3d244a0fffaf8c60814cd4}{}\label{classAES_aa3e2d95cee3d244a0fffaf8c60814cd4}
+C\+BC encrypt a number of blocks (input and return an IV).
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{decrypt(byte cipher[N\+\_\+\+B\+L\+O\+CK], byte plain[N\+\_\+\+B\+L\+O\+CK])}{decrypt(byte cipher[N_BLOCK], byte plain[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::decrypt (
+\begin{DoxyParamCaption}
+\item[{byte}]{cipher\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}, }
+\item[{byte}]{plain\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_abc514d1129789a60d60127f151450e9c}{}\label{classAES_abc514d1129789a60d60127f151450e9c}
+Decrypt a single block of 16 bytes 
+\begin{DoxyParams}{Parameters}
+{\em cipher} & Array of the ciphertext. \\
+\hline
+{\em plain} & Array of the plaintext. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The N\+\_\+\+B\+L\+O\+CK is defined in A\+E\+S\+\_\+config.\+h as, 
+\begin{DoxyCode}
+\textcolor{preprocessor}{#define N\_ROW                   4}
+\textcolor{preprocessor}{     #define N\_COL                   4}
+\textcolor{preprocessor}{     #define N\_BLOCK   (N\_ROW * N\_COL)}
+\end{DoxyCode}
+ Changed to that will change the Block\+\_\+size. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!cbc\+\_\+decrypt@{cbc\+\_\+decrypt}}
+\index{cbc\+\_\+decrypt@{cbc\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+decrypt(byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block, byte iv[N\+\_\+\+B\+L\+O\+CK])}{cbc_decrypt(byte *cipher, byte *plain, int n_block, byte iv[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{n\+\_\+block, }
+\item[{byte}]{iv\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a2b8023781d7ddd13930bda0fd4312369}{}\label{classAES_a2b8023781d7ddd13930bda0fd4312369}
+C\+BC decrypt a number of blocks (input and return an IV)
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+{\em iv} & byte Array that holds the IV (initialization vector). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!cbc\+\_\+decrypt@{cbc\+\_\+decrypt}}
+\index{cbc\+\_\+decrypt@{cbc\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{cbc\+\_\+decrypt(byte $\ast$cipher, byte $\ast$plain, int n\+\_\+block)}{cbc_decrypt(byte *cipher, byte *plain, int n_block)}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::cbc\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{n\+\_\+block}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a7242c64fc6c53152841ecbd840ac2a81}{}\label{classAES_a7242c64fc6c53152841ecbd840ac2a81}
+C\+BC decrypt a number of blocks (input and return an IV)
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & Pointer, points to the ciphertext that will be created. \\
+\hline
+{\em $\ast$plain} & Pointer, points to the plaintex. \\
+\hline
+{\em n\+\_\+block} & integer, indicated the number of blocks to be ciphered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if S\+U\+C\+C\+E\+SS or -\/1 if F\+A\+I\+L\+U\+RE 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!generate\+\_\+\+IV@{generate\+\_\+\+IV}}
+\index{generate\+\_\+\+IV@{generate\+\_\+\+IV}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{generate\+\_\+\+I\+V()}{generate_IV()}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int A\+E\+S\+::generate\+\_\+\+IV (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ad858d620b84502ae3e1a92e8d4904e08}{}\label{classAES_ad858d620b84502ae3e1a92e8d4904e08}
+Generates random IV \index{A\+ES@{A\+ES}!set\+\_\+\+IV@{set\+\_\+\+IV}}
+\index{set\+\_\+\+IV@{set\+\_\+\+IV}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{set\+\_\+\+I\+V(unsigned long long int I\+V\+Cl)}{set_IV(unsigned long long int IVCl)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::set\+\_\+\+IV (
+\begin{DoxyParamCaption}
+\item[{unsigned long long int}]{I\+V\+Cl}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a86f4dfa2c855aa16ef847bb1a46c66bd}{}\label{classAES_a86f4dfa2c855aa16ef847bb1a46c66bd}
+Sets IV (initialization vector) and I\+VC (IV counter). This function changes the ivc and iv variables needed for \hyperlink{classAES}{A\+ES}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\+V\+Cl} & int or hex value of iv , ex. 0x0000000000000001 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+example\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} my\_iv = 01234567; 
+\end{DoxyCode}
+ 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!iv\+\_\+inc@{iv\+\_\+inc}}
+\index{iv\+\_\+inc@{iv\+\_\+inc}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{iv\+\_\+inc()}{iv_inc()}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::iv\+\_\+inc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_aa64b7b326d6016963b56293323590624}{}\label{classAES_aa64b7b326d6016963b56293323590624}
+increase the iv (initialization vector) and I\+VC (IV counter) by 1
+
+This function increased the VI by one step in order to have a different IV each time \index{A\+ES@{A\+ES}!get\+\_\+size@{get\+\_\+size}}
+\index{get\+\_\+size@{get\+\_\+size}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{get\+\_\+size()}{get_size()}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+E\+S\+::get\+\_\+size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ac333f0da98cb09087770fd06d276c6aa}{}\label{classAES_ac333f0da98cb09087770fd06d276c6aa}
+Getter method for size
+
+This function return the size \begin{DoxyReturn}{Returns}
+an integer, that is the size of the of the padded plaintext, thus, the size of the ciphertext. 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!set\+\_\+size@{set\+\_\+size}}
+\index{set\+\_\+size@{set\+\_\+size}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{set\+\_\+size(int sizel)}{set_size(int sizel)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::set\+\_\+size (
+\begin{DoxyParamCaption}
+\item[{int}]{sizel}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ab0f5e7dc53c0b8277f65578765a2e911}{}\label{classAES_ab0f5e7dc53c0b8277f65578765a2e911}
+Setter method for size
+
+This function sets the size of the plaintext+pad \index{A\+ES@{A\+ES}!get\+\_\+\+IV@{get\+\_\+\+IV}}
+\index{get\+\_\+\+IV@{get\+\_\+\+IV}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{get\+\_\+\+I\+V(byte $\ast$out)}{get_IV(byte *out)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::get\+\_\+\+IV (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a4c540bb245286e6f6419980f8129465c}{}\label{classAES_a4c540bb245286e6f6419980f8129465c}
+Getter method for IV
+
+This function return the IV 
+\begin{DoxyParams}{Parameters}
+{\em out} & byte pointer that gets the IV. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none, the IV is writed to the out pointer. 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!calc\+\_\+size\+\_\+n\+\_\+pad@{calc\+\_\+size\+\_\+n\+\_\+pad}}
+\index{calc\+\_\+size\+\_\+n\+\_\+pad@{calc\+\_\+size\+\_\+n\+\_\+pad}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{calc\+\_\+size\+\_\+n\+\_\+pad(int p\+\_\+size)}{calc_size_n_pad(int p_size)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::calc\+\_\+size\+\_\+n\+\_\+pad (
+\begin{DoxyParamCaption}
+\item[{int}]{p\+\_\+size}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a628b83cd60acf674bb64f8c90e7fa84d}{}\label{classAES_a628b83cd60acf674bb64f8c90e7fa84d}
+Calculates the size of the plaintext and the padding.
+
+Calculates the size of theplaintext with the padding and the size of the padding needed. Moreover it stores them in their class variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+size} & the size of the byte array ex sizeof(plaintext) \\
+\hline
+\end{DoxyParams}
+\index{A\+ES@{A\+ES}!pad\+Plaintext@{pad\+Plaintext}}
+\index{pad\+Plaintext@{pad\+Plaintext}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{pad\+Plaintext(void $\ast$in, byte $\ast$out)}{padPlaintext(void *in, byte *out)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::pad\+Plaintext (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{in, }
+\item[{byte $\ast$}]{out}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a58e4e3ba80940f6be851be58a8be6bbd}{}\label{classAES_a58e4e3ba80940f6be851be58a8be6bbd}
+Pads the plaintext
+
+This function pads the plaintext and returns an char array with the plaintext and the padding in order for the plaintext to be compatible with 16bit size blocks required by \hyperlink{classAES}{A\+ES}
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the string of the plaintext in a byte array \\
+\hline
+{\em out} & The string of the out array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no return, The padded plaintext is stored in the out pointer. 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!Check\+Pad@{Check\+Pad}}
+\index{Check\+Pad@{Check\+Pad}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{Check\+Pad(byte $\ast$in, int size)}{CheckPad(byte *in, int size)}}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+E\+S\+::\+Check\+Pad (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{in, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_ac297cda54d320b1b975e1eee96e8d547}{}\label{classAES_ac297cda54d320b1b975e1eee96e8d547}
+Check the if the padding is correct.
+
+This functions checks the padding of the plaintext.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the string of the plaintext in a byte array \\
+\hline
+{\em size} & the size of the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if correct / false if not 
+\end{DoxyReturn}
+\index{A\+ES@{A\+ES}!print\+Array@{print\+Array}}
+\index{print\+Array@{print\+Array}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{print\+Array(byte output[], bool p\+\_\+pad=true)}{printArray(byte output[], bool p_pad=true)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::print\+Array (
+\begin{DoxyParamCaption}
+\item[{byte}]{output\mbox{[}$\,$\mbox{]}, }
+\item[{bool}]{p\+\_\+pad = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a6b0db893a71f8650d3e59441c23fc9dd}{}\label{classAES_a6b0db893a71f8650d3e59441c23fc9dd}
+Prints the array given.
+
+This function prints the given array and pad, It is mainlly used for debugging purpuses or to output the string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\mbox{[}$\,$\mbox{]}} & the string of the text in a byte array \\
+\hline
+{\em p\+\_\+pad} & optional, used to print with out the padding characters \\
+\hline
+\end{DoxyParams}
+\index{A\+ES@{A\+ES}!print\+Array@{print\+Array}}
+\index{print\+Array@{print\+Array}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{print\+Array(byte output[], int sizel)}{printArray(byte output[], int sizel)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::print\+Array (
+\begin{DoxyParamCaption}
+\item[{byte}]{output\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{sizel}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_add8ddd9cce8b4de87b9ef2ff2f5ddb29}{}\label{classAES_add8ddd9cce8b4de87b9ef2ff2f5ddb29}
+Prints the array given.
+
+This function prints the given array in Hexadecimal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\mbox{[}$\,$\mbox{]}} & the string of the text in a byte array \\
+\hline
+{\em sizel} & the size of the array. \\
+\hline
+\end{DoxyParams}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}}
+\index{do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+encrypt(byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits, byte ivl[N\+\_\+\+B\+L\+O\+CK])}{do_aes_encrypt(byte *plain, int size_p, byte *cipher, byte *key, int bits, byte ivl[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{size\+\_\+p, }
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits, }
+\item[{byte}]{ivl\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a417f2c3f01927bc88c56462a0891f3c2}{}\label{classAES_a417f2c3f01927bc88c56462a0891f3c2}
+User friendly implementation of A\+E\+S-\/\+C\+BC encryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em size\+\_\+p} & size of the plaintext \\
+\hline
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+{\em ivl} & the initialization vector IV that will be used for encryption. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}}
+\index{do\+\_\+aes\+\_\+encrypt@{do\+\_\+aes\+\_\+encrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+encrypt(byte $\ast$plain, int size\+\_\+p, byte $\ast$cipher, byte $\ast$key, int bits)}{do_aes_encrypt(byte *plain, int size_p, byte *cipher, byte *key, int bits)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+encrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{plain, }
+\item[{int}]{size\+\_\+p, }
+\item[{byte $\ast$}]{cipher, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_adaeab53c0a5ce4a6b1634650fb0475f2}{}\label{classAES_adaeab53c0a5ce4a6b1634650fb0475f2}
+User friendly implementation of A\+E\+S-\/\+C\+BC encryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em size\+\_\+p} & size of the plaintext \\
+\hline
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}}
+\index{do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+decrypt(byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits, byte ivl[N\+\_\+\+B\+L\+O\+CK])}{do_aes_decrypt(byte *cipher, int size_c, byte *plain, byte *key, int bits, byte ivl[N_BLOCK])}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{size\+\_\+c, }
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits, }
+\item[{byte}]{ivl\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_afd66d5b1be883ee03f2f1d99aa0611da}{}\label{classAES_afd66d5b1be883ee03f2f1d99aa0611da}
+User friendly implementation of A\+E\+S-\/\+C\+BC decryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em size\+\_\+c} & size of the ciphertext \\
+\hline
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+{\em ivl} & the initialization vector IV that will be used for decryption. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}}
+\index{do\+\_\+aes\+\_\+decrypt@{do\+\_\+aes\+\_\+decrypt}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{do\+\_\+aes\+\_\+decrypt(byte $\ast$cipher, int size\+\_\+c, byte $\ast$plain, byte $\ast$key, int bits)}{do_aes_decrypt(byte *cipher, int size_c, byte *plain, byte *key, int bits)}}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::do\+\_\+aes\+\_\+decrypt (
+\begin{DoxyParamCaption}
+\item[{byte $\ast$}]{cipher, }
+\item[{int}]{size\+\_\+c, }
+\item[{byte $\ast$}]{plain, }
+\item[{byte $\ast$}]{key, }
+\item[{int}]{bits}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a649781b684fca61689d5ddbe7d6f498a}{}\label{classAES_a649781b684fca61689d5ddbe7d6f498a}
+User friendly implementation of A\+E\+S-\/\+C\+BC decryption.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$cipher} & pointer to the ciphertext \\
+\hline
+{\em size\+\_\+c} & size of the ciphertext \\
+\hline
+{\em $\ast$plain} & pointer to the plaintext \\
+\hline
+{\em $\ast$key} & pointer to the key that will be used. \\
+\hline
+{\em bits} & bits of the encryption/decrpytion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The key will be stored in class variable. 
+\end{DoxyNote}
+\index{A\+ES@{A\+ES}!millis@{millis}}
+\index{millis@{millis}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{millis()}{millis()}}]{\setlength{\rightskip}{0pt plus 5cm}double A\+E\+S\+::millis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAES_a4cfe8772e20723d2f1a99427fd7067c7}{}\label{classAES_a4cfe8772e20723d2f1a99427fd7067c7}
+used in linux in order to retrieve the time in milliseconds.
+
+\begin{DoxyReturn}{Returns}
+returns the milliseconds in a double format. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{A\+ES@{A\+ES}!round@{round}}
+\index{round@{round}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{round}{round}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+E\+S\+::round\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAES_a409738e82021b1ace4080d13353fe20c}{}\label{classAES_a409738e82021b1ace4080d13353fe20c}
+holds the number of rounds to be used. \index{A\+ES@{A\+ES}!key\+\_\+sched@{key\+\_\+sched}}
+\index{key\+\_\+sched@{key\+\_\+sched}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{key\+\_\+sched}{key_sched}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::key\+\_\+sched\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAES_a376a48258a590cd475f3fee5d1b7b9ff}{}\label{classAES_a376a48258a590cd475f3fee5d1b7b9ff}
+holds the pre-\/computed key for the encryption/decrpytion. \index{A\+ES@{A\+ES}!I\+VC@{I\+VC}}
+\index{I\+VC@{I\+VC}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{I\+VC}{IVC}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int A\+E\+S\+::\+I\+VC\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAES_a414d1e8caa6e9097cdfad6db2b8798b6}{}\label{classAES_a414d1e8caa6e9097cdfad6db2b8798b6}
+holds the initialization vector counter in numerical format. \index{A\+ES@{A\+ES}!iv@{iv}}
+\index{iv@{iv}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{iv}{iv}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::iv\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAES_a3298cab68c9486d8a2bb058c6318f72f}{}\label{classAES_a3298cab68c9486d8a2bb058c6318f72f}
+holds the initialization vector that will be used in the cipher. \index{A\+ES@{A\+ES}!pad@{pad}}
+\index{pad@{pad}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{pad}{pad}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+E\+S\+::pad\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAES_a96465f7ab736930bb13b5069b61be7af}{}\label{classAES_a96465f7ab736930bb13b5069b61be7af}
+holds the size of the padding. \index{A\+ES@{A\+ES}!size@{size}}
+\index{size@{size}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{size}{size}}]{\setlength{\rightskip}{0pt plus 5cm}int A\+E\+S\+::size\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAES_a4e16ef7cd8e240022d044a9b06086ef2}{}\label{classAES_a4e16ef7cd8e240022d044a9b06086ef2}
+hold the size of the plaintext to be ciphered \index{A\+ES@{A\+ES}!tv@{tv}}
+\index{tv@{tv}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{tv}{tv}}]{\setlength{\rightskip}{0pt plus 5cm}timeval A\+E\+S\+::tv\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAES_a9e975134588ed42e6f6e06faaf0549fa}{}\label{classAES_a9e975134588ed42e6f6e06faaf0549fa}
+holds the time value on linux \index{A\+ES@{A\+ES}!arr\+\_\+pad@{arr\+\_\+pad}}
+\index{arr\+\_\+pad@{arr\+\_\+pad}!A\+ES@{A\+ES}}
+\subsubsection[{\texorpdfstring{arr\+\_\+pad}{arr_pad}}]{\setlength{\rightskip}{0pt plus 5cm}byte A\+E\+S\+::arr\+\_\+pad\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classAES_a746004d6335271eb4007096baedb781a}{}\label{classAES_a746004d6335271eb4007096baedb781a}
+holds the hexadecimal padding values on linux 
