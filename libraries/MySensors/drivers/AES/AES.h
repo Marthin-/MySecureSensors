@@ -163,7 +163,7 @@ class AES
  	  *  @param unsigned char* buf, the unsigned char* where to store key
  	  */
 
- 	  void generate_key(int bits,unsigned char* buf);
+ 	void generate_key(int bits,unsigned char* buf);
  
 
 	/** Generates 256 bit AES key and stores it into EEPROM
@@ -171,7 +171,7 @@ class AES
 	 *  @param int bits, size of key in bits
 	 */
 
-	 void generate_main_key();
+	void generate_main_key(unsigned char* buf);
 
 	/** Get 256 bit AES main key from EEPROM
 	 *

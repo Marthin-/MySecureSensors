@@ -466,18 +466,19 @@ void AES::generate_key(int bits,unsigned char* buf){
 
 /*****************************************************************************/
 
-void AES::generate_main_key(){
+void AES::generate_main_key(unsigned char* buf){
 	int size=32;
 	byte main_key[size];
 	generate_key(256,main_key);
-	//EEPROM.put(EEPROM_RF_ENCRYPTION_AES_KEY_ADDRESS,main_key);
+	memcpy(buf,main_key,32);
+	EEPROM.put(EEPROM_RF_ENCRYPTION_AES_KEY_ADDRESS,main_key);
 }
 
 /*****************************************************************************/
 
 void AES::get_main_key(unsigned char* buf){
 	byte my_key[32];
-	//EEPROM.get(EEPROM_RF_ENCRYPTION_AES_KEY_ADDRESS,my_key);
+	EEPROM.get(EEPROM_RF_ENCRYPTION_AES_KEY_ADDRESS,my_key);
 	memcpy(buf,my_key,32);
 }
 
