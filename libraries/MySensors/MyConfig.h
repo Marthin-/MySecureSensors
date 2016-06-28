@@ -335,13 +335,13 @@
 ***********************************/
 
 // Enables RF24 encryption (all nodes and gateway must have this enabled, and all must be personalized with the same AES key)
-//#define MY_RF24_ENABLE_ENCRYPTION
+#define MY_RF24_ENABLE_ENCRYPTION
 
 /**
  * @def MY_DEBUG_VERBOSE_RF24
  * @brief Enable MY_DEBUG_VERBOSE_RF24 flag for verbose debug prints related to the RF24 driver. Requires DEBUG to be enabled.
  */
-//#define MY_DEBUG_VERBOSE_RF24
+#define MY_DEBUG_VERBOSE_RF24
 
 /**
  * @def MY_RF24_SPI_MAX_SPEED

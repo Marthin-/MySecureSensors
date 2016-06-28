@@ -149,7 +149,23 @@ class AES
 	 *
 	 */
 	byte cbc_decrypt (byte * cipher, byte * plain, int n_block) ;
-		
+	
+	/** Generates random IV
+  *  @return random unsigned long long int used as IV for CBC cipher
+	*/
+
+	unsigned long long int generate_IV();
+
+  /** Generates random AES key
+   * 
+   *  @param *int bits, indicates size in bits of the returned key.
+   *  @param buf, the unsigned char* where to store key
+   */
+
+   void generate_key(int bits,unsigned char* buf);
+ 
+
+
 	/** Sets IV (initialization vector) and IVC (IV counter).
 	 *  This function changes the ivc and iv variables needed for AES.
 	 *

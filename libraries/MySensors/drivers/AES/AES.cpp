@@ -229,7 +229,10 @@ static void inv_mix_sub_columns (byte dt[N_BLOCK], byte st[N_BLOCK])
 /******************************************************************************/
 
 AES::AES(){
-	byte ar_iv[8] = { 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x01 };
+	byte ar_iv[8];
+	for(byte i=0;i<8;i++){
+		ar_iv[i]=random(0,256);
+	}
 	memcpy(iv,ar_iv,8);
 	memcpy(iv+8,ar_iv,8);
  	arr_pad[0] = 0x01;
@@ -442,6 +445,23 @@ byte AES::cbc_decrypt (byte * cipher, byte * plain, int n_block)
       cipher += N_BLOCK;
     }
   return AES_SUCCESS ;
+}
+
+/*****************************************************************************/
+
+unsigned long long int AES::generate_IV(){
+	unsigned long long int IV = random(analogRead(0),4294967295);
+	return IV;
+}
+
+/*****************************************************************************/
+
+void AES::generate_key(int bits,unsigned char* buf){
+  int size=bits/8;
+  for (int i=0;i<size;i++){
+      buf[i]=(unsigned char)random(analogRead(random(0,5))%24,255);
+  }
+  Serial.println();
 }
 
 /*****************************************************************************/
