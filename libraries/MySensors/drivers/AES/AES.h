@@ -2,6 +2,7 @@
 #define __AES_H__
 
 #include "AES_config.h"
+#include <EEPROM.h>
 /*
  ---------------------------------------------------------------------------
  Copyright (c) 1998-2008, Brian Gladman, Worcester, UK. All rights reserved.
@@ -151,20 +152,33 @@ class AES
 	byte cbc_decrypt (byte * cipher, byte * plain, int n_block) ;
 	
 	/** Generates random IV
-  *  @return random unsigned long long int used as IV for CBC cipher
+  	*  @return random unsigned long long int used as IV for CBC cipher
 	*/
 
 	unsigned long long int generate_IV();
 
-  /** Generates random AES key
-   * 
-   *  @param *int bits, indicates size in bits of the returned key.
-   *  @param buf, the unsigned char* where to store key
-   */
+ 	 /** Generates random AES key
+ 	  * 
+ 	  *  @param int bits, indicates size in bits of the returned key.
+ 	  *  @param unsigned char* buf, the unsigned char* where to store key
+ 	  */
 
-   void generate_key(int bits,unsigned char* buf);
+ 	  void generate_key(int bits,unsigned char* buf);
  
 
+	/** Generates 256 bit AES key and stores it into EEPROM
+	 *
+	 *  @param int bits, size of key in bits
+	 */
+
+	 void generate_main_key();
+
+	/** Get 256 bit AES main key from EEPROM
+	 *
+	 * @param unsigned char* buf, buffer where to store main key
+	 */
+
+	void get_main_key(unsigned char* buf);
 
 	/** Sets IV (initialization vector) and IVC (IV counter).
 	 *  This function changes the ivc and iv variables needed for AES.
