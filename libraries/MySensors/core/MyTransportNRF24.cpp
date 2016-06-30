@@ -28,7 +28,8 @@
 #if defined(MY_RF24_ENABLE_ENCRYPTION)
 	AES _aes;
 	uint8_t _dataenc[32] = {0};
-	uint8_t _psk[16];
+	uint8_t _psk[32];
+	unsigned long long int _my_iv=_aes.generate_IV();
 #endif
 
 bool transportInit() {
@@ -36,9 +37,9 @@ bool transportInit() {
 	#if defined(MY_RF24_ENABLE_ENCRYPTION)
 		hwReadConfigBlock((void*)_psk, (void*)EEPROM_RF_ENCRYPTION_AES_KEY_ADDRESS, 16);
 		//set up AES-key
-		_aes.set_key(_psk, 16);
+		_aes.set_key(_psk, 32);
 		// Make sure it is purged from memory when set
-		memset(_psk, 0, 16);
+		memset(_psk, 0, 32);
 	#endif
 	
 	return RF24_initialize();
@@ -58,7 +59,7 @@ bool transportSend(uint8_t recipient, const void* data, uint8_t len) {
 		// copy input data because it is read-only
 		memcpy(_dataenc,data,len); 
 		// has to be adjusted, WIP!
-		_aes.set_IV(0);
+		set_IV(_my_iv);
 		len = len > 16 ? 32 : 16;
 		//encrypt data
 		_aes.cbc_encrypt(_dataenc, _dataenc, len/16); 
@@ -79,7 +80,7 @@ uint8_t transportReceive(void* data) {
 	uint8_t len = RF24_readMessage(data);
 	#if defined(MY_RF24_ENABLE_ENCRYPTION)
 		// has to be adjusted, WIP!
-		_aes.set_IV(0);
+		_aes.set_IV(_my_iv);
 		// decrypt data
 		_aes.cbc_decrypt((byte*)(data), (byte*)(data), len>16?2:1);
 	#endif

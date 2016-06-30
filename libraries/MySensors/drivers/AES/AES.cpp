@@ -1,5 +1,6 @@
 #include "AES.h"
-
+#include <MyEepromAddresses.h>
+#include <EEPROM.h>
 /*
  ---------------------------------------------------------------------------
  Copyright (c) 1998-2008, Brian Gladman, Worcester, UK. All rights reserved.
@@ -451,6 +452,7 @@ byte AES::cbc_decrypt (byte * cipher, byte * plain, int n_block)
 
 unsigned long long int AES::generate_IV(){
 	unsigned long long int IV = random(analogRead(0),4294967295);
+	EEPROM.put(EEPROM_RF_ENCRYPTION_AES_IV_ADDRESS, IV);
 	return IV;
 }
 
@@ -468,10 +470,10 @@ void AES::generate_key(int bits,unsigned char* buf){
 
 void AES::generate_main_key(unsigned char* buf){
 	int size=32;
-	byte main_key[size];
+	byte main_key[32];
 	generate_key(256,main_key);
 	memcpy(buf,main_key,32);
-	EEPROM.put(EEPROM_RF_ENCRYPTION_AES_KEY_ADDRESS,main_key);
+	//EEPROM.put(EEPROM_RF_ENCRYPTION_AES_KEY_ADDRESS,main_key);
 }
 
 /*****************************************************************************/

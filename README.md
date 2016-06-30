@@ -5,7 +5,7 @@ TODO :
 implemented | added to library
 
 CONFIDENTIALITY
-    ✔       |       ✖           generate random AES keys (128/256 bits) (previously RSA keys)
+    ✔       |       ✔           generate random AES keys (128/256 bits) (previously RSA keys)
     ✔       |       ✖           exchange 256 bit key through I2C
     ✔       |       ✖           store 256 bit key into eeprom (slave)
     ✔       |       ✖           store 256 bit key for each slave into eeprom (gateway)

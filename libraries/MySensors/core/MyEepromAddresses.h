@@ -40,6 +40,6 @@
 #define EEPROM_SIGNING_SOFT_SERIAL_ADDRESS (EEPROM_SIGNING_SOFT_HMAC_KEY_ADDRESS+32) // This is set with SecurityPersonalizer.ino
 #define EEPROM_RF_ENCRYPTION_AES_KEY_ADDRESS (EEPROM_SIGNING_SOFT_SERIAL_ADDRESS+9) // This is set with SecurityPersonalizer.ino
 #define EEPROM_NODE_LOCK_COUNTER (EEPROM_RF_ENCRYPTION_AES_KEY_ADDRESS+32)
-#define EEPROM_LOCAL_CONFIG_ADDRESS (EEPROM_NODE_LOCK_COUNTER+1) // First free address for sketch static configuration
-
+#define EEPROM_RF_ENCRYPTION_AES_IV_ADDRESS (EEPROM_NODE_LOCK_COUNTER+1)
+#define EEPROM_LOCAL_CONFIG_ADDRESS (EEPROM_NODE_LOCK_COUNTER+8) // First free address for sketch static configuration
 #endif
