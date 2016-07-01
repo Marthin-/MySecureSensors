@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <SPI.h>
 #include <SD.h>
-#define GATEWAY
+//#define GATEWAY
 #include <EEPROM.h>
 #include <AES.h>
 
@@ -36,7 +36,7 @@ void setup() {
     nodeID=Wire.read();
   }
   Serial.print("Adding node number ");
-  Serial.print(nodeId);
+  Serial.print(nodeID);
   Serial.println(" to secured MySensors");
 /***** Generate IV & AES key + Storing IV into EEPROM ***********/
   
@@ -145,7 +145,7 @@ void sendNodeId(){
   Wire.write(nodeID);
 }
 
-void receiveAes(){
+void receiveAes(int howMany){
   //TODO
   byte i=0;
   /* store received byte array in buff (reduce, recycle, reuse ;) */
