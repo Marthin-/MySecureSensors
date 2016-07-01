@@ -83,6 +83,8 @@ void setup() {
     myFile.println(nodeID);
     myFile.write(AES_256_key,32);
     myFile.println("");
+    myFile.write(IV,8);
+    myFile.println("");
     myFile.println("test write AES key");
     myFile.close();
   } else {
