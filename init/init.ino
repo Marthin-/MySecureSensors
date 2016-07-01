@@ -104,8 +104,16 @@ void setup() {
   
   #else
   Serial.println("======== Node mode: engaged =========");
-  //TODO
 
+/******** Send node ID to gateway through I2C **************/
+  Wire.begin(8);
+  EEPROM.get(2,nodeID);
+  Wire.onRequest(sendNodeId);
+  
+/******** Receive AES IV & key, store it into EEPROM *******/
+
+  Wire.onReceive(receiveAes);
+  
   
   #endif
   Serial.println("=====================================");
@@ -114,4 +122,14 @@ void setup() {
 
 void loop() {
   // empty loop
+}
+
+void sendNodeId(){
+  Wire.write(nodeID);
+}
+
+void receiveAes(){
+  //TODO
+  //byte received_IV[8];
+  //memcpy()
 }
