@@ -33,6 +33,8 @@
 #define MY_RADIO_NRF24
 //#define MY_RADIO_RFM69
 
+#include <EEPROM.h>
+
 #include <SPI.h>
 #include <MySensors.h>  
 #include <NewPing.h>
@@ -49,10 +51,13 @@ int lastDist;
 boolean metric = true; 
 AES aes;
 byte key[32];
+byte stored_key[32];
 void setup()  
 { 
-  aes.generate_key(256,key);
+ // aes.generate_key(256,key);
+  
   metric = getConfig().isMetric;
+  aes.get_main_key(stored_key);
 }
 
 void presentation() {
@@ -67,7 +72,7 @@ void loop()
 {     
   Serial.print("generated key : ");
   for(int i=0;i<32;i++){
-    Serial.print(key[i]);
+    Serial.print(stored_key[i]);
   }
   Serial.println();
   int dist = metric?sonar.ping_cm():sonar.ping_in();
