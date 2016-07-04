@@ -1,9 +1,19 @@
 # MySecureSensors
 Add whole security protocol to MySensors Arduino library
 
-TODO :
-implemented | added to library
+Use init sketch to add sensor to gateways file
+gateways MySensorsFile formated as follows :
+<NodeID>
+<AES 256 bit key>
+<AES 8 bit IV>
+<short description>
+<empty line>
 
+TODO :
+
+Add CLI to init sketch
+
+implemented | added to library
 CONFIDENTIALITY
     ✔       |       ✔           generate random AES keys (128/256 bits) (previously RSA keys)
     ✔       |       ✖           exchange 256 bit key through I2C
