@@ -3,15 +3,11 @@ Add whole security protocol to MySensors Arduino library
 
 Use init sketch to add sensor to gateways file
 gateways MySensorsFile formated as follows :
-<NodeID>
-<AES 256 bit key>
-<AES 8 bit IV>
-<short description>
-<empty line>
+<nodeID(1 byte)><IV(8 bytes)><key(32 bytes)><comments(100bytes)><nextsensor...>
 
 TODO :
 
-Add CLI to init sketch
+Push init sketch to library
 
 implemented | added to library
 CONFIDENTIALITY
