@@ -451,7 +451,7 @@ byte AES::cbc_decrypt (byte * cipher, byte * plain, int n_block)
 /*****************************************************************************/
 
 unsigned long long int AES::generate_IV(){
-	unsigned long long int IV = random(analogRead(0),4294967295);
+	unsigned long long int IV = random(analogRead(0)+1,4294967295);
 	EEPROM.put(419, IV);
 	return IV;
 }
@@ -461,7 +461,7 @@ unsigned long long int AES::generate_IV(){
 void AES::generate_key(int bits,unsigned char* buf){
   int size=bits/8;
   for (int i=0;i<size;i++){
-      buf[i]=(unsigned char)random(analogRead(random(0,5))%24,255);
+      buf[i]=(unsigned char)random(analogRead(random(0,5))%24+1,255);
   }
   Serial.println();
 }
