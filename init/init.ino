@@ -213,7 +213,6 @@ void setup() {
 	/*** Send NodeID + receive & store AES key + IV into EEPROM*/
 
 #else
-	Serial.println("======== Node mode: engaged =========");
 
 	/******** Send node ID to gateway through I2C **************/
 	Wire.begin(8);
