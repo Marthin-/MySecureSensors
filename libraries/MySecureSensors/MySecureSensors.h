@@ -5,10 +5,10 @@
 
 #ifndef MysecureSensors_h
 #define MysecureSensors_h
-#define GATEWAY //comment/uncomment to select between gateway and node mode
+//#define GATEWAY //comment/uncomment to select between gateway and node mode
 #define READ_CONFIG //in case you want to know what you secured network is made of ;)
 #define DEBUG //more verbose
-//#define TRANSMISSION //for debug purpose
+#define TRANSMISSION //for debug purpose
 #ifdef GATEWAY
   #include <AES.h>
 #endif
@@ -25,13 +25,17 @@ void initiateGateway();
 void initiateNode();
 byte requestNodeID();
 void requestDescription(byte* buff);
-boolean nodeIdAvailable(byte ID);
+boolean nodeIdAvailable(File file, byte ID);
 void sendCryptData();
 void buildData(byte* myData);
 void writeSD(byte* data);
 void readSecureConfig();
-void sendNodeID();
+void ArduinoSendNodeId();
+void ArduinoSendDescription();
+void ArduinoReceiveAes(int howMany);
+void sendNodeId();
 void sendDescription();
 void receiveAes();
+
 
 #endif

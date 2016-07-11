@@ -1,4 +1,4 @@
-#include "MysecureSensors.h"
+#include "MySecureSensors.h"
 
 #ifdef GATEWAY
 AES aes;
@@ -17,6 +17,7 @@ void initiateSecureSensors(){
 		Serial.println("============= MySensors =============");
 		Serial.println("======= Secured Device Pairing ======");
 	  #endif
+    SD.begin();
     #ifdef GATEWAY
 		initiateGateway();
 	  #endif
@@ -45,8 +46,11 @@ void initiateGateway(){
         requestDescription(descr);
     #endif
     #ifndef TRANSMISSION
-        nodeID=255;
-        descr="Adding dummy sensor to test gateway side";
+        nodeID=252;
+        byte fonzie[41]= "Adding dummy sensor to test gateway side"; //prevents buffer overflow
+        for (int i=0;i<41;i++){
+          descr[i]=fonzie[i];
+        }
     #endif
     Serial.print("Adding node number ");
     Serial.print(nodeID);
@@ -54,7 +58,7 @@ void initiateGateway(){
 
 //Check configuration on SD card to avoid redundancy
     Serial.println("Checking duplication");
-    if(nodeIdAvailable(nodeID)!=true){
+    if(nodeIdAvailable(myFile,nodeID)!=true){
         Serial.println("Error adding sensor : Node ID already taken");
         return;
     }
@@ -87,7 +91,7 @@ void initiateGateway(){
 
 //store data on SD card
     Serial.println("Storing data on SD card");
-    storeSD(myData);
+    writeSD(myData);
     Serial.println("[OK]");
 
     #ifdef READ_CONFIG
@@ -132,25 +136,31 @@ void requestDescription(byte* buff){
 ////////////////////////////////////////////////////////////////
 /*********** check SD card if node ID is available ************/
 ////////////////////////////////////////////////////////////////
-boolean nodeIdAvailable(byte ID){
-    myFile=SD.open("SENSBDD.TXT");
+boolean nodeIdAvailable(File file,byte ID){
+    file=SD.open("SENSBDD.TXT");
+    if(!file){
+      #ifdef DEBUG
+      Serial.println("Could not open SENSBDD.TXT for checking redundancy. Please check SD and retry");
+      #endif
+      return false;
+    }
     unsigned int count=NODE_ID_ADDR;
     myFile.seek(0);
-    for(unsigned int count=0;count<myFile.size();count+=DATA_SIZE){ //check every nodeID in file
+    for(unsigned int count=0;count<file.size();count+=DATA_SIZE){ //check every nodeID in file
         #ifdef DEBUG
             Serial.println("reading byte n°");
             Serial.print(count);
             Serial.println("");
         #endif
-        if(!myFile.available()){
+        if(!file.available()){
             break;
         }
-        myFile.seek(count);
-        if((char)myFile.read()==(char)nodeID){
+        file.seek(count);
+        if((char)file.read()==(char)nodeID){
             return false;
         }
     }
-    myFile.close();
+    file.close();
     return true;
 }
 
@@ -192,7 +202,7 @@ void buildData(byte* data){
 /////////////////////////////////////////////////////////////////
 /******************** write data to SD card ********************/
 /////////////////////////////////////////////////////////////////
-void storeSD(byte* data){
+void writeSD(byte* data){
     myFile = SD.open("SENSBDD.TXT",FILE_WRITE);
     if (myFile) {
         myFile.seek(myFile.size());
@@ -257,7 +267,7 @@ void readSecureConfig(){
         Serial.println("======== Node mode: engaged =========");
         #ifdef TRANSMISSION
             Wire.begin(8);
-            sendNodeID();
+            sendNodeId();
             sendDescription();
             receiveAes();
         #endif
@@ -268,10 +278,10 @@ void readSecureConfig(){
 //////////////////////////////////////////////////////////////////////
 /****** get node ID from user or EEPROM and send it to gateway ******/
 //////////////////////////////////////////////////////////////////////
-    void sendNodeID(){
+    void sendNodeId(){
         Serial.println("You may enter node ID manually (between 000 and 255, e.g. 001,212,054...");
         #ifdef DEBUG
-            Serial.println("Use \n as line terminator");
+            Serial.println("Use \\n as line terminator");
         #endif
         Serial.setTimeout(20000);
         byte nodeID_byte[3];
@@ -285,7 +295,7 @@ void readSecureConfig(){
             Serial.print("Sending (parent) node ID to gateway : ");
             Serial.println(nodeID);
         #endif
-        Wire.onRequest(ArduinoSendNodeID);
+        Wire.onRequest(ArduinoSendNodeId);
         #ifdef DEBUG
             Serial.println("[OK]");
         #endif
@@ -306,7 +316,7 @@ void readSecureConfig(){
 /******* receive AES key & IV from gateway, store into EEPROM ********/
 ///////////////////////////////////////////////////////////////////////
     void receiveAes(){
-        Wire.onReceive(receiveAes);
+        Wire.onReceive(ArduinoReceiveAes);
         for(int i=0;i<8;i++){
             buff_8[i]=buff[i];
         }
@@ -334,7 +344,7 @@ void readSecureConfig(){
         Wire.write(nodeID);
     }
 
-    void ArduinoReceiveAes(int howMany /*not used though*/){
+    void ArduinoReceiveAes(int howMany){
         byte i=0;
         /* store received byte array in buff (reduce, recycle, reuse ;) */
         while(Wire.available()){

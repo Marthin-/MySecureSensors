@@ -5,7 +5,7 @@
 
 #define GATEWAY //comment/uncomment to select between gateway and node mode
 #define READ_CONFIG //in case you want to know what you secured network is made of ;)
-//#define DEBUG //more verbose
+#define DEBUG //more verbose
 //#define TRANSMISSION //for debug purpose. Does not stop transmission in node mode.
 #define GENERATE_AES //save space in case of low security need
 #ifdef GENERATE_AES
