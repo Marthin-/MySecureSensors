@@ -3,13 +3,12 @@
 #include <EEPROM.h>
 #include <Wire.h>
 
-#ifndef MysecureSensors_h
-#define MysecureSensors_h
-//#define GATEWAY //comment/uncomment to select between gateway and node mode
+#define GATEWAY //comment/uncomment to select between gateway and node mode
 #define READ_CONFIG //in case you want to know what you secured network is made of ;)
-#define DEBUG //more verbose
-#define TRANSMISSION //for debug purpose
-#ifdef GATEWAY
+//#define DEBUG //more verbose
+//#define TRANSMISSION //for debug purpose. Does not stop transmission in node mode.
+#define GENERATE_AES //save space in case of low security need
+#ifdef GENERATE_AES
   #include <AES.h>
 #endif
 
@@ -23,19 +22,3 @@
 void initiateSecureSensors();
 void initiateGateway();
 void initiateNode();
-byte requestNodeID();
-void requestDescription(byte* buff);
-boolean nodeIdAvailable(File file, byte ID);
-void sendCryptData();
-void buildData(byte* myData);
-void writeSD(byte* data);
-void readSecureConfig();
-void ArduinoSendNodeId();
-void ArduinoSendDescription();
-void ArduinoReceiveAes(int howMany);
-void sendNodeId();
-void sendDescription();
-void receiveAes();
-
-
-#endif
